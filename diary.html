@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alternating Sections</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Ensure padding and border are included in width/height calculations */
+    }
+
+    .section {
+      width: 100%; /* Ensure the section spans the full width of the viewport */
+      display: flex;
+      justify-content: center; /* Center the content container */
+      padding: 20px 0;
+      box-sizing: border-box; /* Ensure padding is included in width calculation */
+    }
+
+    .content {
+      width: 80%;
+      max-width: 1200px; /* Add a max-width to avoid too wide content on large screens */
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-sizing: border-box; /* Ensure padding is included in width calculation */
+    }
+
+    .image-container,
+    .text-container {
+      flex: 1;
+      padding: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .text-container {
+      text-align: left;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      color: rgba(125, 95, 95, 1);
+    }
+
+    p {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #007bff;
+      background-color: none;
+      border-color: #007bff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #98a4b1;
+    }
+
+    /* Increase the gap between image and text */
+    .section:nth-child(even) .image-container {
+      order: 1;
+      margin-left: 60px; /* Increase the margin for the right-aligned image */
+    }
+
+    .section:nth-child(even) .text-container {
+      order: 0;
+    }
+
+    .section:nth-child(odd) .image-container {
+      margin-right: 60px; /* Increase the margin for the left-aligned image */
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .content {
+        flex-direction: column;
+        width: 100%; /* Ensure full width on smaller screens */
+        padding: 20px; /* Add padding for better spacing on small screens */
+      }
+
+      .section:nth-child(even) .image-container,
+      .section:nth-child(even) .text-container,
+      .section:nth-child(odd) .image-container {
+        order: initial;
+        margin: 0;
+      }
+
+      .text-container {
+        text-align: center;
+      }
+    }
+
+    .my-bills,
+    .wellness {
+      background-color: rgba(175, 237, 241, 1);
+    }
+  </style>
+  <body>
+    <section class="section">
+      <div class="content">
+        <div class="image-container">
+          <img src="assets/appointments.png" alt="Image 1" />
+        </div>
+        <div class="text-container">
+          <h2>Appointments</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            A calendar view provides an easy to view method for all your
+            appointments. Never miss an appointment with our automated alerts
+            system.
+          </p>
+          <p>
+            Appointments can be cancelled or changed to a different date as
+            needed. The booking can be either for physical or digital
+            appointments.
+          </p>
+          <button class="cta-button">REQUEST FOR A DEMO</button>
+        </div>
+      </div>
+    </section>
+    <section class="section my-bills">
+      <div class="content">
+        <div class="text-container">
+          <h2>My Bills</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Diary also acts as a repository for all your medical bills or
+            invoices. It is now easier to view invoices that are de-cluttered
+            and saved by data.
+          </p>
+          <p>
+            The invoices can also be uploaded or directly saved from connected
+            applications. Track your spend using reports from invoices and take
+            smart decisions.
+          </p>
+          <button class="cta-button">REQUEST FOR A DEMO</button>
+        </div>
+        <div class="image-container">
+          <img src="assets/bills.webp" alt="Image 2" />
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="content">
+        <div class="image-container">
+          <img src="assets/digital-health-wallet.png" alt="Image 3" />
+        </div>
+        <div class="text-container">
+          <h2>Digital Health Wallet</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Transform your medical record management with our secure,
+            centralized storage solution.
+          </p>
+          <p>
+            Say goodbye to cumbersome paper records and hello to convenient
+            access from anywhere, at any time. With our platform, your entire
+            medical history is at your fingertips, ensuring seamless
+            communication with healthcare providers and eliminating the risk of
+            overlooking vital information.
+          </p>
+          <button class="cta-button">REQUEST FOR A DEMO</button>
+        </div>
+      </div>
+    </section>
+    <section class="section wellness">
+      <div class="content">
+        <div class="text-container">
+          <h2>Wellness</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Diary isn't just a healthcare app - it's your personalized wellness
+            companion.
+          </p>
+          <p>
+            Seamlessly track and monitor your overall well-being through a range
+            of essential parameters, including sleep patterns, dietary habits,
+            exercise routines, and even lifestyle choices like good and bad
+            habits.
+          </p>
+          <button class="cta-button">REQUEST FOR A DEMO</button>
+        </div>
+        <div class="image-container">
+          <img src="assets/Wellness.png" alt="Image 4" />
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="content">
+        <div class="image-container">
+          <img src="assets/chats.webp" alt="Image 5" />
+        </div>
+        <div class="text-container">
+          <h2>Chats</h2>
+          <p style="font-style: italic">
+            Chat with doctors and other medical personnel real-time and get all
+            your queries clarified instantly
+          </p>
+          <p>
+            No need to disappoint anyone in the queue waiting to visit. A path
+            to peace of mind, leading to healthy life.
+          </p>
+          <button class="cta-button">REQUEST FOR A DEMO</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
