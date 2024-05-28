@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DiaBrain - AI Driven Decision Support</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        color: #333;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .section {
+        padding: 80px 30px;
+        text-align: center;
+        border-bottom: 1px solid #eaeaea;
+      }
+      .section h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #333;
+        position: relative;
+        display: inline-block;
+        animation: fadeInDown 1s ease-in-out;
+      }
+      .section p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        animation: fadeInUp 1s ease-in-out;
+      }
+      .cta-button:hover {
+        background-color: #0056b3;
+      }
+      .feature {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 40px;
+        text-align: left;
+      }
+      .feature img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 10px;
+        margin-right: 60px;
+        animation: fadeInLeft 1s ease-in-out;
+      }
+      .feature-text {
+        flex: 1;
+        animation: fadeInRight 1s ease-in-out;
+      }
+      .feature-text h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .feature-text p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .feature {
+          flex-direction: column;
+          text-align: center;
+        }
+        .feature img {
+          margin: 0 0 20px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="section">
+        <h2>DiaBrain - AI Driven Decision Support</h2>
+        <p>
+          First ever AI driven Decision support for Diabetologists to provide
+          data driven approach. Copilot for doctors to prescribe antidiabetic
+          drugs. Import drugs in your prescription if you choose best combo for
+          the profile.
+        </p>
+        <a href="#" class="cta-button">Learn more</a>
+      </section>
+
+      <section class="section">
+        <div class="feature">
+          <img src="assets/Machine learning.png" alt="AI Model" />
+          <div class="feature-text">
+            <h3>A Machine Learning Model with Real World Data</h3>
+            <p>
+              Helps to fit a patient into a particular cluster to predict
+              probable control in future. Doctor can decide prescription based
+              on drug effectiveness developed using the model. Continuous
+              learning model with human doctor in the loop to make it more
+              robust.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>DiaBrain</h2>
+        <p>
+          Clinical Decision Support System helps doctors to take precise
+          decisions on prescriptions and drugs faster and efficiently.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="feature">
+          <img src="assets/patterns.png" alt="Patterns" />
+          <div class="feature-text">
+            <h3>Patterns</h3>
+            <p>
+              Drugs are prescribed after diagnosis and based on indicators from
+              lab reports. A pattern is formed in drug prescriptions for
+              ailments on patients by population. Such patterns pave way for
+              prescription automation, that is efficient and time saving.
+            </p>
+            <p>
+              The CDSS system provides drug prescription help to doctors based
+              on patients lab result indicators and vitals information. Doctors
+              can consent the drugs, change or remove these recommendations. Add
+              in-addition or newly, drugs that are suited for the current
+              condition of the patient.
+            </p>
+            <p>
+              Such CDSS saves time for doctors who can consult more patients
+              effectively. Adverse Drug Reaction (ADR) Detection is analyzing
+              patterns in patient data, such as symptoms, lab results, and
+              medication history. Healthcare providers can identify potential
+              adverse drug reactions or interactions. This information can help
+              prevent or minimize harm to patients and improve medication
+              safety.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="feature">
+          <img src="assets/Intelligence-diabrain.jpg" alt="Intelligence" />
+          <div class="feature-text">
+            <h3>Intelligence</h3>
+            <p>
+              Key insights about ailments can be obtained by analyzing data that
+              is saved over a period of time. Intelligence can be applied over
+              such data to extract patterns and analyze the effectiveness of the
+              drugs prescribed.
+            </p>
+            <p>
+              By applying technologies like machine learning and artificial
+              intelligence, we can deduce patterns and take the insight in
+              changing the drug models for effective care to patients.
+              Currently, for diabetic care, 20 years of patient validated data
+              is used to extract insights.
+            </p>
+            <p>
+              Medical Imaging in AI algorithms can analyze medical images such
+              as X-rays, MRIs, and CT scans to assist in diagnosing diseases and
+              conditions. Deep learning algorithms have shown promise in
+              detecting abnormalities, assisting radiologists, and improving
+              accuracy in image interpretation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="feature">
+          <img src="assets/integration.jpg" alt="Integrated" />
+          <div class="feature-text">
+            <h3>Integrated</h3>
+            <p>
+              Integrating both patterns and data-based intelligence makes the
+              system robust. Such a system when used by doctors increases their
+              efficiency and for patients, it improves the care with a different
+              solution approach.
+            </p>
+            <p>
+              This approach is preventive and proactive, and a superior system
+              helping patients for a long, healthy and happy life.
+            </p>
+            <p>
+              Technological integration involves connecting and integrating
+              various health information systems, electronic health records
+              (EHRs), medical devices, and other digital tools to enable
+              interoperability and data exchange. This allows for seamless
+              sharing of patient information, test results, and treatment plans
+              among healthcare providers, improving efficiency and patient
+              safety.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
