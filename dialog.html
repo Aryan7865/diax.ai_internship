@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diary</title>
+    <title>Dialog</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="JavaScript" href="script.js" />
     <link
@@ -61,7 +61,7 @@
     .image-container img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 15px;
     }
 
     .text-container {
@@ -69,19 +69,19 @@
     }
 
     h2 {
-      margin: 0 0 10px;
-      font-size: 26px;
+      margin: 0 0 15px;
+      font-size: 23.5px;
       color: rgba(125, 95, 95, 1);
     }
 
     p {
       margin: 0 0 10px;
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.5;
     }
 
     .cta-button {
-      padding: 10px 20px;
+      padding: 10px 25px;
       font-size: 16px;
       color: #007bff;
       background-color: #fff;
@@ -157,13 +157,15 @@
     /* Large image styling for Dashboard section */
     .large-image-container {
       width: 100%; /* Make the image container span the full width */
-      padding: 0; /* Remove padding to ensure full width */
+      padding: 0;
+      /* Remove padding to ensure full width */
     }
 
     .large-image-container img {
       width: 100%;
       height: auto;
-      display: block; /* Ensure the image is a block element */
+      display: block;
+      /* Ensure the image is a block element */
     }
     body {
       font-family: Arial, sans-serif;
@@ -181,11 +183,10 @@
     }
 
     .introduction {
-      background-color: #f8f8f8; /* Background color for the introduction section */
+      background-color: #fff; /* Background color for the introduction section */
       border-radius: 10px;
       padding: 40px;
       margin-top: 20px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
     .introduction h2 {
@@ -251,6 +252,87 @@
         width: calc(100% - 40px);
       }
     }
+    /* Style the container */
+    /* Style the container */
+    .container {
+      display: flex;
+      flex-wrap: wrap; /* Allow steps to wrap on smaller screens */
+      justify-content: center; /* Center steps horizontally */
+      width: 90%; /* Adjust container width as needed */
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Style the step */
+    .step {
+      text-align: center;
+      padding: 1rem;
+      width: 30%; /* Set initial width for steps */
+      margin: 0.5rem; /* Add some margin for spacing */
+    }
+
+    /* Style the image */
+    .step img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    /* Style the heading */
+    .step h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Media Queries for responsiveness */
+    @media screen and (max-width: 768px) {
+      .step {
+        width: 45%; /* Adjust width for smaller screens (tablets) */
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .step {
+        width: 100%; /* Make each step full width on mobile */
+      }
+    }
+    /* styles.css */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #animated-heading {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .animated-title {
+      font-size: 2.5em;
+      color: #333;
+      margin: 0;
+      opacity: 0;
+      animation: fadeInSlideUp 2s forwards;
+    }
+
+    @keyframes fadeInSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 600px) {
+      .animated-title {
+        font-size: 2em;
+      }
+    }
   </style>
   <body>
     <nav>
@@ -297,86 +379,87 @@
     <div style="height: 2rem" aria-hidden="true" class="wp-block-spacer"></div>
     <div class="container">
       <section class="introduction">
-        <h2>Welcome to Diary - Your Personal Health Companion</h2>
+        <h2>Welcome to Dialog</h2>
         <p>
-          Diary is designed to help you manage your health and wellness journey
-          with ease. Here are some key features:
-        </p>
-        <div class="features">
-          <div class="feature">
-            <h3>Metrics</h3>
-            <p>
-              Easily monitor your body weight, height , waist circumference and
-              BMI( Body Mass Index) signs over time for better health
-              management.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Vitals Tracker</h3>
-            <p>
-              Track health metrics such as blood glucose, insulin dose, blood
-              pressure, pulse, SpO2, temperature and insulin titration is
-              possible with the help of appropriate vitals.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Diet Tracker</h3>
-            <p>
-              Keep track of your daily food intake, portion sizes, and any
-              dietary remarks and upload your images of food that you consume to
-              track your diet.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Sleep Tracker</h3>
-            <p>
-              Use Sleep Tracker to manage your sleep. Record your sleep start
-              and end times, along with sleep duration, for better sleep
-              management.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>Fitness</h3>
-            <p>
-              Regularly monitor and log your exercise routines and physical
-              activities to maintain peak fitness, stay active, and reach your
-              health goals.
-            </p>
-          </div>
-        </div>
-        <div
-          style="height: 2rem"
-          aria-hidden="true"
-          class="wp-block-spacer"
-        ></div>
-
-        <p>
-          Whether you're navigating chronic health conditions, pursuing a more
-          vibrant lifestyle, or simply seeking to stay well-informed about your
-          overall well-being, Diary provides the comprehensive support and
-          insights you need.
+          It is the application for hospitals/clinics/practices, used by medical
+          services and allied personnels like doctors, nurses, attendants,
+          pharmacist and lab technicians.
         </p>
       </section>
     </div>
     <div style="height: 2rem" aria-hidden="true" class="wp-block-spacer"></div>
+    <section id="animated-heading">
+      <h1 class="animated-title">Doctors</h1>
+    </section>
+    <div style="height: 2rem" aria-hidden="true" class="wp-block-spacer"></div>
+
+    <div class="container">
+      <div class="step">
+        <img src="assets\timing-dialog.svg" alt="Find a Doctor" />
+        <h2>Timing</h2>
+        <p>
+          Doctors can set and adjust their weekly consultation timings,
+          including times off or unavailability, for patients to use when
+          booking appointments.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/consultation-dialog.svg" alt="Calendar" />
+        <h2>Consultation</h2>
+        <p>
+          This application's primary goal is to simplify prescriptions. Diary
+          recommends suitable medications, which doctors can adjust to meet each
+          patient's unique needs.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/appointment-dialog.svg" alt="Reminder" />
+        <h2>Pick Appointment Slot</h2>
+        <p>
+          Doctors can view all their appointments in a calendar based on their
+          set timings, allowing effective time management.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/reports-dialog.svg" alt="Reminder" />
+        <h2>Reports</h2>
+        <p>
+          Default reports are available based on appointments and diagnoses.
+          Custom reports can be created with full support provided.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/Location-barriers-dialog.svg" alt="Reminder" />
+        <h2>No location barriers</h2>
+        <p>
+          Book in-clinic or video consultation appointments. Video consultations
+          let you connect with your doctor from anywhere.
+        </p>
+      </div>
+    </div>
+    <div style="height: 3rem" aria-hidden="true" class="wp-block-spacer"></div>
+
+    <section id="animated-heading">
+      <h1 class="animated-title">Hospital/Clinic/Practice</h1>
+    </section>
+    <div style="height: 3rem" aria-hidden="true" class="wp-block-spacer"></div>
 
     <section class="section">
       <div class="content">
         <div class="image-container">
-          <img src="assets/appointments.png" alt="Image 1" />
+          <img src="assets/usersdialog.webp" alt="Image 1" />
         </div>
         <div class="text-container">
-          <h2>Appointments</h2>
+          <h2>Users</h2>
           <p style="font-style: italic; margin-bottom: 20px">
-            A calendar view provides an easy to view method for all your
-            appointments. Never miss an appointment with our automated alerts
-            system.
+            Apart from doctors, nurses and attendants are key personnel at a
+            medical center. Mostly, these resources work in shifts.
           </p>
           <p>
-            Appointments can be cancelled or changed to a different date as
-            needed. The booking can be either for physical or digital
-            appointments.
+            The application provides an efficient way to manage shift schedule
+            for these resources. User can be added/removed, roles updated for
+            restrictive or administrative access for efficent functioning of the
+            center.
           </p>
           <button class="cta-button">TAKE DEMO</button>
         </div>
@@ -385,42 +468,40 @@
     <section class="section my-bills">
       <div class="content">
         <div class="text-container">
-          <h2>My Bills</h2>
+          <h2>Out-patient</h2>
           <p style="font-style: italic; margin-bottom: 20px">
-            Diary also acts as a repository for all your medical bills or
-            invoices. It is now easier to view invoices that are de-cluttered
-            and saved by data.
+            Registration of out-patients, if not using the Diary app is done.
           </p>
           <p>
-            The invoices can also be uploaded or directly saved from connected
-            applications. Track your spend using reports from invoices and take
-            smart decisions.
+            Queueing the patients for doctors visit and enabling patients visit
+            in an ordered way based on the queue to avoid any frustrations with
+            the patients.
           </p>
+
           <button class="cta-button">TAKE DEMO</button>
         </div>
         <div class="image-container">
-          <img src="assets/bills.webp" alt="Image 2" />
+          <img src="assets/out-patient-dialog.jpg" alt="Image 2" />
         </div>
       </div>
     </section>
     <section class="section">
       <div class="content">
         <div class="image-container">
-          <img src="assets/digital-health-wallet.png" alt="Image 3" />
+          <img src="assets/In-patient-dialog.jpg" alt="Image 3" />
         </div>
         <div class="text-container">
-          <h2>Digital Health Wallet</h2>
+          <h2>In-patient</h2>
           <p style="font-style: italic; margin-bottom: 20px">
-            Transform your medical record management with our secure,
-            centralized storage solution.
+            Admission of patients for serious conditions into a partiuclar ward
+            and assigning a room for such patients.
           </p>
           <p>
-            Say goodbye to cumbersome paper records and hello to convenient
-            access from anywhere, at any time. With our platform, your entire
-            medical history is at your fingertips, ensuring seamless
-            communication with healthcare providers and eliminating the risk of
-            overlooking vital information.
+            Provision of case sheet used for multiple entries by duty doctors
+            for such admitted patients. Discharge summary along with discharge
+            checklist is provided for complete care.
           </p>
+
           <button class="cta-button">TAKE DEMO</button>
         </div>
       </div>
@@ -428,67 +509,130 @@
     <section class="section wellness">
       <div class="content">
         <div class="text-container">
-          <h2>Wellness</h2>
+          <h2>Lab</h2>
           <p style="font-style: italic; margin-bottom: 20px">
-            Diary isn't just a healthcare app - it's your personalized wellness
-            companion.
+            Entry and report of pathology and radiology tests with status
+            updation at various like collection of sample, in progress and
+            report ready.
           </p>
           <p>
-            Seamlessly track and monitor your overall well-being through a range
-            of essential parameters, including sleep patterns, dietary habits,
-            exercise routines, and even lifestyle choices like good and bad
-            habits.
+            The report will be automatically tied to the patient using Diary
+            app. Patient need to come to the medical center only if paper or
+            physical copy of the report is needed.
           </p>
+
           <button class="cta-button">TAKE DEMO</button>
         </div>
         <div class="image-container">
-          <img src="assets/Wellness.png" alt="Image 4" />
+          <img src="assets/labs-dialog.jpg" alt="Image 4" />
         </div>
       </div>
     </section>
-
-    <!-- Dashboard Section -->
-    <section class="section dashboard">
-      <div class="content center-content">
-        <div class="text-container center-text">
-          <h2>Dashboard</h2>
+    <section class="section">
+      <div class="content">
+        <div class="image-container">
+          <img src="assets/billings-dialog.webp" alt="Image 3" />
+        </div>
+        <div class="text-container">
+          <h2>Billings</h2>
           <p style="font-style: italic; margin-bottom: 20px">
-            Complementing all of these features is the dashboard. A single
-            pictorial/chart view of complete, upto date health data.
+            Diary's billing module offers a suite of comprehensive reports,
+            empowering you with invaluable business intelligence to make
+            informed decisions and drive growth.
           </p>
           <p>
-            Make, take and be responsible for all your health conditions.
-            Self-awareness, self-knowledge about one-self leads to healthy and
-            happy living.
+            These reports provide detailed insights into financial performance,
+            revenue trends, and operational efficiency, helping you identify
+            opportunities for improvement and strategic planning. With Diary's
+            billing module, you gain the tools needed to optimize your
+            practice's financial health and achieve sustainable growth.
           </p>
-        </div>
-        <div class="large-image-container">
-          <img src="assets/Dashboard.webp" alt="Dashboard Image" />
+
+          <button class="cta-button">TAKE DEMO</button>
         </div>
       </div>
     </section>
+    <div style="height: 3rem" aria-hidden="true" class="wp-block-spacer"></div>
+
+    <section id="animated-heading">
+      <h1 class="animated-title">Pharmacy</h1>
+    </section>
+    <div style="height: 3rem" aria-hidden="true" class="wp-block-spacer"></div>
 
     <section class="section">
       <div class="content">
         <div class="image-container">
-          <img src="assets/chats.webp" alt="Image 5" />
+          <img src="assets/reports-dialog.webp" alt="Image 3" />
         </div>
         <div class="text-container">
-          <h2>Chats</h2>
-          <p style="font-style: italic">
-            Chat with doctors and other medical personnel real-time and get all
-            your queries clarified instantly
+          <h2>Reports</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Utilize these reports to gain comprehensive insights into pharmacy
+            activities, enabling informed decision-making and strategic
+            planning.
           </p>
           <p>
-            No need to disappoint anyone in the queue waiting to visit. A path
-            to peace of mind, leading to healthy life.
+            Key reports include Daily Sales, Detailed Sales, Due Payments,
+            Returns, Fast-Moving Items, Slow-Moving Items, Non-Moving Items,
+            Medical and Non-Medical Inventory, Expired Products, and Outstanding
+            Payments.
           </p>
+
           <button class="cta-button">TAKE DEMO</button>
         </div>
       </div>
     </section>
 
-    <section class="contact_us" style="background-color: rgb(35, 36, 119)">
+    <section class="section wellness">
+      <div class="content">
+        <div class="text-container">
+          <h2>Master</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Billing master is responsible to maintain the suppliers,
+            manufactures, purchase orders, purchase order returns and payment
+            for purchase orders.
+          </p>
+          <p>
+            Tracking and return of expired or near expiry drugs. Drug quantity
+            maintenance based on demand.
+          </p>
+
+          <button class="cta-button">TAKE DEMO</button>
+        </div>
+        <div class="image-container">
+          <img src="assets/Master-dialog.jpg" alt="Image 4" />
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="content">
+        <div class="image-container">
+          <img src="assets/admin-dialog.jpg" alt="Image 3" />
+        </div>
+        <div class="text-container">
+          <h2>Admin</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            A key module/feature for role based access control, there by
+            ensuring privacy of data and compliance to standards.
+          </p>
+          <p>
+            Admin also facilitates the master maintenances of rooms, wards, lab
+            tests and their charges. These charges vary and can be changed to
+            reflect the current market condition.
+          </p>
+
+          <button class="cta-button">TAKE DEMO</button>
+        </div>
+      </div>
+    </section>
+    <section
+      class="contact_us"
+      style="
+        background-color: rgb(35, 36, 119);
+        margin: 0px !important;
+        padding: 0px;
+      "
+    >
       <div class="container-contact-us">
         <h1 style="padding-top: 80px; margin-left: 60px; color: #fff">
           Connect With Us
