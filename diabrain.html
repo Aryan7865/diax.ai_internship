@@ -3,279 +3,612 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DiaBrain - AI Driven Decision Support</title>
+    <title>Diabrain</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="JavaScript" href="script.js" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #fff;
-        color: #333;
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Ensure padding and border are included in width/height calculations */
+    }
+
+    .section {
+      width: 100%; /* Ensure the section spans the full width of the viewport */
+      display: flex;
+      justify-content: center; /* Center the content container */
+      padding: 100px 0;
+      box-sizing: border-box; /* Ensure padding is included in width calculation */
+    }
+
+    .content {
+      width: 80%;
+      max-width: 1200px; /* Add a max-width to avoid too wide content on large screens */
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-sizing: border-box; /* Ensure padding is included in width calculation */
+    }
+
+    .image-container,
+    .text-container {
+      flex: 1;
+      padding: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .text-container {
+      text-align: left;
+    }
+
+    h2 {
+      margin: 0 0 15px;
+      font-size: 23.5px;
+      color: rgba(125, 95, 95, 1);
+    }
+
+    p {
+      margin: 0 0 10px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #007bff;
+      background-color: #fff;
+      border: 2px solid #007bff; /* Border style */
+      border-radius: 5px;
+      text-decoration: none; /* Remove underline from link */
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #3379c4;
+      color: #fff;
+    }
+
+    /* Increase the gap between image and text */
+    .section:nth-child(even) .image-container {
+      order: 1;
+      margin-left: 80px; /* Increase the margin for the right-aligned image */
+    }
+
+    .section:nth-child(even) .text-container {
+      order: 0;
+    }
+
+    .section:nth-child(odd) .image-container {
+      margin-right: 80px; /* Increase the margin for the left-aligned image */
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        text-align: center;
       }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
+
+      .content {
+        flex-direction: column;
+        width: 100%; /* Ensure full width on smaller screens */
+        padding: 20px; /* Add padding for better spacing on small screens */
+      }
+
+      .section:nth-child(even) .image-container,
+      .section:nth-child(even) .text-container,
+      .section:nth-child(odd) .image-container {
+        order: initial;
+        margin: 0;
+      }
+
+      .text-container {
+        text-align: center;
+      }
+    }
+
+    .my-bills,
+    .wellness {
+      background-color: rgba(175, 237, 241, 1);
+    }
+
+    /* Center align content and text for the Dashboard section */
+    .dashboard .content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .center-content {
+      text-align: center;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    /* Large image styling for Dashboard section */
+    .large-image-container {
+      width: 100%; /* Make the image container span the full width */
+      padding: 0;
+      /* Remove padding to ensure full width */
+    }
+
+    .large-image-container img {
+      width: 100%;
+      height: auto;
+      display: block; /* Ensure the image is a block element */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #fff; /* Background color set to white */
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .introduction {
+      background-color: #fff; /* Background color for the introduction section */
+      border-radius: 10px;
+      padding: 40px;
+      margin-top: 20px;
+    }
+
+    .introduction h2 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .introduction p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .features {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .feature {
+      width: 300px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      margin: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 16px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .feature {
+        width: calc(100% - 40px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .introduction {
         padding: 20px;
       }
-      .section {
-        padding: 80px 30px;
-        text-align: center;
-        border-bottom: 1px solid #eaeaea;
-      }
-      .section h2 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        color: #333;
-        position: relative;
-        display: inline-block;
-        animation: fadeInDown 1s ease-in-out;
-      }
-      .section p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #555;
-        max-width: 800px;
-        margin: 0 auto 20px;
-        animation: fadeIn 1s ease-in-out;
-      }
-      .cta-button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: #fff;
-        background-color: #007bff;
 
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-        animation: fadeInUp 1s ease-in-out;
-      }
-      .cta-button:hover {
-        background-color: #0056b3;
-      }
       .feature {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin-top: 40px;
-        text-align: left;
+        width: calc(100% - 40px);
       }
-      .feature img {
-        width: 100%;
-        max-width: 450px;
-        border-radius: 10px;
-        margin-right: 60px;
-        animation: fadeInLeft 1s ease-in-out;
-      }
-      .feature-text {
-        flex: 1;
-        animation: fadeInRight 1s ease-in-out;
-      }
-      .feature-text h3 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: #333;
-      }
-      .feature-text p {
-        font-size: 16px;
-        color: #555;
-        line-height: 1.6;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fadeInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes fadeInRight {
-        from {
-          opacity: 0;
-          transform: translateX(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .feature {
-          flex-direction: column;
-          text-align: center;
-        }
-        .feature img {
-          margin: 0 0 20px 0;
-        }
-      }
-    </style>
-  </head>
+    }
+  </style>
   <body>
+    <nav>
+      <ul class="menu">
+        <li class="logo">
+          <a href="#"
+            ><img
+              src="assets/Group 3.png"
+              alt="DiaX.ai"
+              style="height: 50px; width: 150px"
+          /></a>
+        </li>
+        <li class="item"><a href="index.html">Home</a></li>
+        <li class="item"><a href="#about">About</a></li>
+        <li class="item"><a href="dialog.html">Dialog</a></li>
+        <li class="item"><a href="diabrain.html">DiaBrain</a></li>
+        <!-- <li class="item has-submenu">
+          <a tabindex="0">Dialog</a>
+          <ul class="submenu">
+            <li class="subitem"><a href="#">Design</a></li>
+            <li class="subitem"><a href="#">Development</a></li>
+            <li class="subitem"><a href="#">SEO</a></li>
+            <li class="subitem"><a href="#">Copywriting</a></li>
+          </ul>
+        </li> -->
+        <!-- <li class="item has-submenu">
+          <a tabindex="0">DiaBrain</a>
+          <ul class="submenu">
+            <li class="subitem"><a href="#">Freelancer</a></li>
+            <li class="subitem"><a href="#">Startup</a></li>
+            <li class="subitem"><a href="#">Enterprise</a></li>
+          </ul>
+        </li> -->
+        <li class="item"><a href="diary.html">Diary</a></li>
+
+        <li class="item button"><a href="#contact">Contact Us </a></li>
+        <li class="item button secondary">
+          <a href="https://diary.diax.ai/">Diary App</a>
+        </li>
+        <li class="toggle">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div style="height: 2rem" aria-hidden="true" class="wp-block-spacer"></div>
     <div class="container">
-      <section class="section">
-        <h2>DiaBrain - AI Driven Decision Support</h2>
+      <section class="our-solutions" id="about">
+        <h1 style="color: black; font-size: 3rem">Welcome to DiaBrain</h1>
+        <h2 class="blue-gradient" style="font-size: 3rem">
+          Path to Precision Medicine
+        </h2>
         <p>
+          Clinical Decision Support System helps doctors to take precise
+          decisions on prescriptions and drugs faster and efficiently.
+        </p>
+        <p style="margin-top: 20px">
           First ever AI driven Decision support for Diabetologists to provide
           data driven approach. Copilot for doctors to prescribe antidiabetic
           drugs. Import drugs in your prescription if you choose best combo for
           the profile.
         </p>
-        <a href="#" class="cta-button">Learn more</a>
-      </section>
-
-      <section class="section">
-        <div class="feature">
-          <img src="assets/Machine learning.png" alt="AI Model" />
-          <div class="feature-text">
-            <h3>A Machine Learning Model with Real World Data</h3>
-            <p>
-              Helps to fit a patient into a particular cluster to predict
-              probable control in future. Doctor can decide prescription based
-              on drug effectiveness developed using the model. Continuous
-              learning model with human doctor in the loop to make it more
-              robust.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>DiaBrain</h2>
-        <p>
-          Clinical Decision Support System helps doctors to take precise
-          decisions on prescriptions and drugs faster and efficiently.
-        </p>
-      </section>
-
-      <section class="section">
-        <div class="feature">
-          <img src="assets/patterns.png" alt="Patterns" />
-          <div class="feature-text">
-            <h3>Patterns</h3>
-            <p>
-              Drugs are prescribed after diagnosis and based on indicators from
-              lab reports. A pattern is formed in drug prescriptions for
-              ailments on patients by population. Such patterns pave way for
-              prescription automation, that is efficient and time saving.
-            </p>
-            <p>
-              The CDSS system provides drug prescription help to doctors based
-              on patients lab result indicators and vitals information. Doctors
-              can consent the drugs, change or remove these recommendations. Add
-              in-addition or newly, drugs that are suited for the current
-              condition of the patient.
-            </p>
-            <p>
-              Such CDSS saves time for doctors who can consult more patients
-              effectively. Adverse Drug Reaction (ADR) Detection is analyzing
-              patterns in patient data, such as symptoms, lab results, and
-              medication history. Healthcare providers can identify potential
-              adverse drug reactions or interactions. This information can help
-              prevent or minimize harm to patients and improve medication
-              safety.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="feature">
-          <img src="assets/Intelligence-diabrain.jpg" alt="Intelligence" />
-          <div class="feature-text">
-            <h3>Intelligence</h3>
-            <p>
-              Key insights about ailments can be obtained by analyzing data that
-              is saved over a period of time. Intelligence can be applied over
-              such data to extract patterns and analyze the effectiveness of the
-              drugs prescribed.
-            </p>
-            <p>
-              By applying technologies like machine learning and artificial
-              intelligence, we can deduce patterns and take the insight in
-              changing the drug models for effective care to patients.
-              Currently, for diabetic care, 20 years of patient validated data
-              is used to extract insights.
-            </p>
-            <p>
-              Medical Imaging in AI algorithms can analyze medical images such
-              as X-rays, MRIs, and CT scans to assist in diagnosing diseases and
-              conditions. Deep learning algorithms have shown promise in
-              detecting abnormalities, assisting radiologists, and improving
-              accuracy in image interpretation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="feature">
-          <img src="assets/integration.jpg" alt="Integrated" />
-          <div class="feature-text">
-            <h3>Integrated</h3>
-            <p>
-              Integrating both patterns and data-based intelligence makes the
-              system robust. Such a system when used by doctors increases their
-              efficiency and for patients, it improves the care with a different
-              solution approach.
-            </p>
-            <p>
-              This approach is preventive and proactive, and a superior system
-              helping patients for a long, healthy and happy life.
-            </p>
-            <p>
-              Technological integration involves connecting and integrating
-              various health information systems, electronic health records
-              (EHRs), medical devices, and other digital tools to enable
-              interoperability and data exchange. This allows for seamless
-              sharing of patient information, test results, and treatment plans
-              among healthcare providers, improving efficiency and patient
-              safety.
-            </p>
-          </div>
-        </div>
       </section>
     </div>
+    <div style="height: 2rem" aria-hidden="true" class="wp-block-spacer"></div>
+
+    <section class="section">
+      <div class="content">
+        <div class="image-container">
+          <img src="assets/Machine learning.png" alt="Image 1" />
+        </div>
+        <div class="text-container">
+          <h2>A Machine Learning Model with Real World Data</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Helps to fit a patient into a particular cluster to predict probable
+            control in future.
+          </p>
+          <p>
+            Doctor can decide prescription based on drug effectiveness developed
+            using the model. Continuous learning model with human doctor in the
+            loop to make it more robust.
+          </p>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
+        </div>
+      </div>
+    </section>
+    <section class="section my-bills">
+      <div class="content">
+        <div class="text-container">
+          <h2>Patterns</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Drugs are prescribed after diagnosis and based on lab report
+            indicators. Patterns in prescriptions by population allow for
+            efficient, time-saving automation.
+          </p>
+          <p>
+            The CDSS helps doctors prescribe drugs based on lab results and
+            vitals. Doctors can consent, change, or remove these recommendations
+            and add new drugs suited to the patient's current condition.
+          </p>
+          <p>
+            The CDSS saves doctors time, allowing them to consult more patients
+            effectively. Analyzing patient data for ADR detection helps identify
+            and prevent potential adverse reactions, improving medication
+            safety.
+          </p>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
+        </div>
+        <div class="image-container">
+          <img src="assets/patterns.png" alt="Image 2" />
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="content">
+        <div class="image-container">
+          <img src="assets/Intelligence-diabrain.jpg" alt="Image 3" />
+        </div>
+        <div class="text-container">
+          <h2>Intelligence</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Analyzing long-term data provides key insights into ailments,
+            allowing the extraction of patterns and assessment of drug
+            effectiveness.
+          </p>
+          <p>
+            Machine learning and AI technologies help deduce patterns and refine
+            drug models for effective patient care. For diabetic care, 20 years
+            of validated patient data are used to extract insights.
+          </p>
+          <p>
+            AI algorithms in medical imaging analyze X-rays, MRIs, and CT scans
+            to assist in diagnosing diseases. Deep learning detects
+            abnormalities, improves accuracy, and supports radiologists in image
+            interpretation.
+          </p>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
+        </div>
+      </div>
+    </section>
+    <section class="section wellness">
+      <div class="content">
+        <div class="text-container">
+          <h2>Personalised Care</h2>
+          <p style="font-style: italic; margin-bottom: 20px">
+            Integrating patterns and data-based intelligence creates a robust
+            system, enhancing doctors' efficiency and providing better patient
+            care with a different solution approach.
+          </p>
+          <p>
+            This preventive and proactive approach offers superior care,
+            promoting a long, healthy, and happy life for patients.
+          </p>
+          <p>
+            Technological integration connects health information systems, EHRs,
+            medical devices, and digital tools, enabling seamless data exchange.
+            This improves efficiency, patient safety, and coordination among
+            healthcare providers.
+          </p>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
+        </div>
+        <div class="image-container">
+          <img src="assets/integration.jpg" alt="Image 4" />
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="contact_us"
+      style="background-color: rgb(35, 36, 119)"
+    >
+      <div class="container-contact-us">
+        <h1 style="padding-top: 80px; margin-left: 60px; color: #fff">
+          Connect With Us
+        </h1>
+        <p style="color: #fff; margin-left: 60px">
+          We would love to respond to your queries and help you succeed.<br />
+          Feel free to get in touch with us.
+        </p>
+        <div class="contact-box">
+          <div class="contact-left">
+            <div class="request-box" style="padding: 40px">
+              <h3>Send your request</h3>
+              <form>
+                <div class="input-row">
+                  <div class="input-group">
+                    <label style="color: #fff">Name</label>
+                    <input type="text" placeholder="John Amendo" />
+                  </div>
+                  <div class="input-group">
+                    <label style="color: #fff">Phone</label>
+                    <input type="text" placeholder="+91 9823829832" />
+                  </div>
+                </div>
+                <div class="input-row">
+                  <div class="input-group">
+                    <label style="color: #fff">Email</label>
+                    <input type="email" placeholder="johnamendo@gmail.com" />
+                  </div>
+                  <div class="input-group">
+                    <label style="color: #fff">Subject</label>
+                    <input type="text" placeholder="Product Demo" />
+                  </div>
+                </div>
+                <label style="color: #fff">Message</label>
+                <textarea
+                  rows="5"
+                  placeholder="Your Message"
+                  style="font-family: sans-serif; font-size: 15px"
+                ></textarea>
+                <a
+                  href="#"
+                  class="button-download"
+                  style="color: white; margin-top: 25px"
+                  >Send</a
+                >
+              </form>
+            </div>
+          </div>
+          <div class="contact-right">
+            <h3>Reach Us</h3>
+            <table>
+              <tr>
+                <td>Email</td>
+                <td>info@diax.ai</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>+91 9994360912</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>
+                  Diabwellness Pvt Ltd, Ramasami Koil Street, Kumbakonam,
+                  Thanjavur District
+                </td>
+              </tr>
+            </table>
+            <div
+              class="social-links"
+              style="margin-top: 215px; margin-bottom: 10px"
+            >
+              <a href="https://www.instagram.com/your_username"
+                ><img
+                  src="assets/instagram.png"
+                  alt="Instagram"
+                  width="20"
+                  height="20"
+                  style="margin-right: 20px"
+              /></a>
+              <a href="https://www.linkedin.com/in/your_profile"
+                ><img
+                  src="assets/linkedIn.png"
+                  alt="LinkedIn"
+                  width="20"
+                  height="20"
+                  style="margin-right: 20px"
+              /></a>
+              <a href="https://www.facebook.com/your_page"
+                ><img
+                  src="assets/facebook.png"
+                  alt="Facebook"
+                  width="20"
+                  height="20"
+                  style="margin-right: 20px"
+              /></a>
+              <a href="https://twitter.com/your_handle"
+                ><img
+                  src="assets/twitter.png"
+                  alt="Twitter"
+                  width="20"
+                  height="20"
+                  style="margin-right: 20px"
+              /></a>
+            </div>
+            <hr
+              style="
+                border-top: 2px solid rgba(101, 103, 236, 1);
+                margin: 0;
+                padding: 0;
+              "
+            />
+            <div
+              style="
+                color: #fff;
+                margin-top: 0.5rem;
+                display: flex;
+                align-items: center;
+              "
+            >
+              <p style="margin: 0; margin-right: 5px">For website queries:</p>
+              <i
+                class="fas fa-phone"
+                style="color: #fff; margin-left: 10px"
+              ></i>
+              <span style="margin-left: 5px; padding-left: 3px"
+                >8459566241 (Aryan)</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const toggle = document.querySelector(".toggle");
+      const menu = document.querySelector(".menu");
+      const items = document.querySelectorAll(".item");
+
+      /* Toggle mobile menu */
+      function toggleMenu() {
+        if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+        } else {
+          menu.classList.add("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+        }
+      }
+
+      /* Activate Submenu */
+      function toggleItem() {
+        if (this.classList.contains("submenu-active")) {
+          this.classList.remove("submenu-active");
+        } else if (menu.querySelector(".submenu-active")) {
+          menu
+            .querySelector(".submenu-active")
+            .classList.remove("submenu-active");
+          this.classList.add("submenu-active");
+        } else {
+          this.classList.add("submenu-active");
+        }
+      }
+
+      /* Close Submenu From Anywhere */
+      function closeSubmenu(e) {
+        if (menu.querySelector(".submenu-active")) {
+          let isClickInside = menu
+            .querySelector(".submenu-active")
+            .contains(e.target);
+
+          if (!isClickInside && menu.querySelector(".submenu-active")) {
+            menu
+              .querySelector(".submenu-active")
+              .classList.remove("submenu-active");
+          }
+        }
+      }
+      /* Event Listeners */
+      toggle.addEventListener("click", toggleMenu, false);
+      for (let item of items) {
+        if (item.querySelector(".submenu")) {
+          item.addEventListener("click", toggleItem, false);
+        }
+        item.addEventListener("keypress", toggleItem, false);
+      }
+      document.addEventListener("click", closeSubmenu, false);
+    </script>
   </body>
 </html>

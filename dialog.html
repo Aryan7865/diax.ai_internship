@@ -70,24 +70,25 @@
 
     h2 {
       margin: 0 0 15px;
-      font-size: 23.5px;
+      font-size: 24.5px;
       color: rgba(125, 95, 95, 1);
     }
 
     p {
       margin: 0 0 10px;
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.5;
     }
 
     .cta-button {
-      padding: 10px 25px;
+      display: inline-block;
+      padding: 10px 20px;
       font-size: 16px;
       color: #007bff;
       background-color: #fff;
-      border-color: #007bff;
+      border: 2px solid #007bff; /* Border style */
       border-radius: 5px;
-      cursor: pointer;
+      text-decoration: none; /* Remove underline from link */
       transition: background-color 0.3s ease;
     }
 
@@ -197,7 +198,7 @@
     }
 
     .introduction p {
-      font-size: 18px;
+      font-size: 20px;
       color: #555;
       line-height: 1.6;
       text-align: center;
@@ -345,10 +346,10 @@
               style="height: 50px; width: 150px"
           /></a>
         </li>
-        <li class="item"><a href="#">Home</a></li>
-        <li class="item"><a href="#">About</a></li>
-        <li class="item"><a href="#">Dialog</a></li>
-        <li class="item"><a href="#">DiaBrain</a></li>
+        <li class="item"><a href="index.html">Home</a></li>
+        <li class="item"><a href="#about">About</a></li>
+        <li class="item"><a href="dialog.html">Dialog</a></li>
+        <li class="item"><a href="diabrain.html">DiaBrain</a></li>
         <!-- <li class="item has-submenu">
           <a tabindex="0">Dialog</a>
           <ul class="submenu">
@@ -366,10 +367,12 @@
             <li class="subitem"><a href="#">Enterprise</a></li>
           </ul>
         </li> -->
-        <li class="item"><a href="#">Diary</a></li>
+        <li class="item"><a href="diary.html">Diary</a></li>
 
-        <li class="item button"><a href="#">Contact Us </a></li>
-        <li class="item button secondary"><a href="#">Download App</a></li>
+        <li class="item button"><a href="#contact">Contact Us </a></li>
+        <li class="item button secondary">
+          <a href="https://diary.diax.ai/">Diary App</a>
+        </li>
         <li class="toggle">
           <a href="#"><i class="fas fa-bars"></i></a>
         </li>
@@ -461,7 +464,7 @@
             restrictive or administrative access for efficent functioning of the
             center.
           </p>
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
       </div>
     </section>
@@ -478,7 +481,7 @@
             the patients.
           </p>
 
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
         <div class="image-container">
           <img src="assets/out-patient-dialog.jpg" alt="Image 2" />
@@ -502,7 +505,7 @@
             checklist is provided for complete care.
           </p>
 
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
       </div>
     </section>
@@ -521,7 +524,7 @@
             physical copy of the report is needed.
           </p>
 
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
         <div class="image-container">
           <img src="assets/labs-dialog.jpg" alt="Image 4" />
@@ -548,7 +551,7 @@
             practice's financial health and achieve sustainable growth.
           </p>
 
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
       </div>
     </section>
@@ -578,7 +581,7 @@
             Payments.
           </p>
 
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
       </div>
     </section>
@@ -597,7 +600,7 @@
             maintenance based on demand.
           </p>
 
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
         <div class="image-container">
           <img src="assets/Master-dialog.jpg" alt="Image 4" />
@@ -621,17 +624,14 @@
             reflect the current market condition.
           </p>
 
-          <button class="cta-button">TAKE DEMO</button>
+          <a href="https://diary.diax.ai/" class="cta-button">SIGN IN</a>
         </div>
       </div>
     </section>
     <section
+      id="contact"
       class="contact_us"
-      style="
-        background-color: rgb(35, 36, 119);
-        margin: 0px !important;
-        padding: 0px;
-      "
+      style="background-color: rgb(35, 36, 119)"
     >
       <div class="container-contact-us">
         <h1 style="padding-top: 80px; margin-left: 60px; color: #fff">
@@ -686,17 +686,17 @@
             <table>
               <tr>
                 <td>Email</td>
-                <td>diax@gmail.com</td>
+                <td>info@diax.ai</td>
               </tr>
               <tr>
                 <td>Phone</td>
-                <td>+ 91 8923232322</td>
+                <td>+91 9994360912</td>
               </tr>
               <tr>
                 <td>Address</td>
                 <td>
-                  #212, Ground floor, 7th cross Near Guindy National Park,
-                  Chennai- 600036
+                  Diabwellness Pvt Ltd, Ramasami Koil Street, Kumbakonam,
+                  Thanjavur District
                 </td>
               </tr>
             </table>
@@ -765,5 +765,59 @@
         </div>
       </div>
     </section>
+    <script>
+      const toggle = document.querySelector(".toggle");
+      const menu = document.querySelector(".menu");
+      const items = document.querySelectorAll(".item");
+
+      /* Toggle mobile menu */
+      function toggleMenu() {
+        if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+        } else {
+          menu.classList.add("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+        }
+      }
+
+      /* Activate Submenu */
+      function toggleItem() {
+        if (this.classList.contains("submenu-active")) {
+          this.classList.remove("submenu-active");
+        } else if (menu.querySelector(".submenu-active")) {
+          menu
+            .querySelector(".submenu-active")
+            .classList.remove("submenu-active");
+          this.classList.add("submenu-active");
+        } else {
+          this.classList.add("submenu-active");
+        }
+      }
+
+      /* Close Submenu From Anywhere */
+      function closeSubmenu(e) {
+        if (menu.querySelector(".submenu-active")) {
+          let isClickInside = menu
+            .querySelector(".submenu-active")
+            .contains(e.target);
+
+          if (!isClickInside && menu.querySelector(".submenu-active")) {
+            menu
+              .querySelector(".submenu-active")
+              .classList.remove("submenu-active");
+          }
+        }
+      }
+      /* Event Listeners */
+      toggle.addEventListener("click", toggleMenu, false);
+      for (let item of items) {
+        if (item.querySelector(".submenu")) {
+          item.addEventListener("click", toggleItem, false);
+        }
+        item.addEventListener("keypress", toggleItem, false);
+      }
+      document.addEventListener("click", closeSubmenu, false);
+    </script>
   </body>
 </html>
