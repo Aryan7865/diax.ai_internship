@@ -475,7 +475,7 @@ a {
   padding-left: auto;
 }
 
-.phone-number input[type="tel"] {
+.phone-number input[type="text"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -584,7 +584,7 @@ a {
     width: 170%;
     margin-left: -60px; /* Adjust width to 100% for smaller screens */
   }
-  .phone-number input[type="tel"] {
+  .phone-number input[type="text"] {
     width: 100%;
   }
 }
@@ -1517,78 +1517,78 @@ Generic layout (demo looks)
   }
 }
 
+body {
+  font-family: "Arial", sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#contact {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .container-contact-us {
   width: 95%;
-  margin: 120px auto;
-
+  margin: 0 auto;
   background-color: rgb(35, 36, 119);
+  padding: 60px 0;
 }
+
 .contact-box {
   display: flex;
+  flex-wrap: wrap;
 }
-.contact-left {
-  flex-basis: 60%;
 
+.contact-left {
+  flex-basis: 47%;
   padding: 40px 60px;
 }
+
 .contact-right {
-  flex-basis: 40%;
+  flex-basis: 50%;
   border-radius: 40px;
   padding: 40px;
   background: rgb(35 36 119);
   color: #fff;
 }
-h1 {
-  margin-bottom: 10px;
+
+h1,
+h3 {
   color: white;
 }
 
 .container-contact-us p {
   margin-bottom: 40px;
 }
-.input-row {
-  display: flex;
-  justify-content: space-between;
+
+.input-group {
   margin-bottom: 20px;
 }
 
-.input-row .input-group {
-  flex-basis: 45%;
-}
-
-input {
-  width: 95%;
+input,
+textarea {
+  width: 100%;
   border: none;
   border-bottom: 1px solid #ccc;
   outline: none;
-  padding-bottom: 5px;
   padding: 10px;
-}
-input[type="text"],
-input[type="email"],
-textarea {
   border-radius: 8px;
-}
-
-textarea {
-  width: 98%;
-  border: 1px solid #ccc;
-
-  outline: none;
-  padding: 10px;
   box-sizing: border-box;
 }
+
+textarea {
+  border: 1px solid #ccc;
+}
+
 label {
   color: white;
   margin-bottom: 6px;
   display: block;
 }
 
-.contact-left h3 {
-  color: white;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
+.contact-left h3,
 .contact-right h3 {
   font-weight: 600;
   margin-bottom: 30px;
@@ -1599,115 +1599,49 @@ tr td:first-child {
 }
 
 tr td {
-  padding-top: 20px;
+  padding-top: 30px;
 }
+
 .social-links a img {
   filter: invert(1);
 }
+
 .request-box {
   border: 2px solid rgba(101, 103, 236, 1);
   border-radius: 10px;
   margin-bottom: 40px;
 }
-/* Default styles */
-.container-contact-us {
-  width: 95%;
-  margin: 40px auto;
-  background-color: rgb(35, 36, 119);
-  padding: 20px;
-}
 
-.contact-box {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.contact-left {
-  flex-basis: 100%;
-  padding: 20px;
-}
-
-.contact-right {
-  flex-basis: 100%;
-  padding: 20px;
-  margin-top: 20px;
-  background: rgb(35 36 119);
-  color: #fff;
-}
-
-.request-box {
-  border: 2px solid rgba(101, 103, 236, 1);
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-h1,
-h3 {
+.button-download {
   color: white;
-}
-
-label {
-  color: white;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
+  background-color: rgba(101, 103, 236, 1);
   border: none;
-  border-bottom: 1px solid #ccc;
-  outline: none;
-  padding-bottom: 5px;
-  padding: 10px;
+  padding: 15px 30px;
+  font-size: 16px;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 25px;
 }
 
-textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  outline: none;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-/* Media queries for responsiveness */
-
-@media only screen and (min-width: 768px) {
-  .contact-left {
-    flex-basis: 55%;
-  }
-
-  .contact-right {
-    flex-basis: 40%;
-    margin-top: 0;
-    margin-left: 20px;
-  }
+.button-download:hover {
+  background-color: #67b76e;
 }
 
 @media only screen and (max-width: 768px) {
+  .contact-left,
   .contact-right {
-    margin-left: 0;
+    flex-basis: 100%;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .container-contact-us {
-    padding: 0 10px;
+    padding: 0 0px;
   }
-
-  .contact-left,
-  .contact-right {
-    flex-basis: 100%;
-  }
-
-  .input-row {
-    flex-direction: column;
-  }
-
-  .input-row .input-group {
-    flex-basis: 100%;
-    margin-bottom: 10px;
+  .contact-left {
+    margin: 0%;
+    padding: 5%;
   }
 }
 

@@ -182,7 +182,7 @@
     }
 
     .introduction {
-      background-color: #f8f8f8; /* Background color for the introduction section */
+      background-color: #fff; /* Background color for the introduction section */
       border-radius: 10px;
       padding: 40px;
       margin-top: 20px;
@@ -212,11 +212,10 @@
 
     .feature {
       width: 300px;
-      background-color: #f1f1f1;
-      border-radius: 8px;
+      background-color: #fff;
+
       margin: 20px;
       padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
       text-align: center;
     }
@@ -252,6 +251,48 @@
         width: calc(100% - 40px);
       }
     }
+    /* Style the container */
+    .container {
+      display: flex;
+      flex-wrap: wrap; /* Allow steps to wrap on smaller screens */
+      justify-content: center; /* Center steps horizontally */
+      width: 90%; /* Adjust container width as needed */
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Style the step */
+    .step {
+      text-align: center;
+      padding: 1rem;
+      width: 30%; /* Set initial width for steps */
+      margin: 0.5rem; /* Add some margin for spacing */
+    }
+
+    /* Style the image */
+    .step img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    /* Style the heading */
+    .step h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Media Queries for responsiveness */
+    @media screen and (max-width: 768px) {
+      .step {
+        width: 45%; /* Adjust width for smaller screens (tablets) */
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .step {
+        width: 100%; /* Make each step full width on mobile */
+      }
+    }
   </style>
   <body>
     <nav>
@@ -266,6 +307,8 @@
         </li>
         <li class="item"><a href="index.html">Home</a></li>
         <li class="item"><a href="#about">About</a></li>
+        <li class="item"><a href="diary.html">Diary</a></li>
+
         <li class="item"><a href="dialog.html">Dialog</a></li>
         <li class="item"><a href="diabrain.html">DiaBrain</a></li>
         <!-- <li class="item has-submenu">
@@ -285,7 +328,6 @@
             <li class="subitem"><a href="#">Enterprise</a></li>
           </ul>
         </li> -->
-        <li class="item"><a href="diary.html">Diary</a></li>
 
         <li class="item button"><a href="#contact">Contact Us </a></li>
         <li class="item button secondary">
@@ -298,7 +340,7 @@
     </nav>
 
     <div style="height: 2rem" aria-hidden="true" class="wp-block-spacer"></div>
-    <div class="container">
+    <!-- <div class="container">
       <section class="introduction">
         <h2>Welcome to Diary - Your Personal Health Companion</h2>
         <p>
@@ -361,8 +403,73 @@
           insights you need.
         </p>
       </section>
+    </div> -->
+    <div class="container">
+      <section class="our-solutions" id="about">
+        <h1 style="color: black; font-size: 3rem">Welcome to Diary</h1>
+        <h2 class="blue-gradient" style="font-size: 3rem">
+          Your Personal Health Companion
+        </h2>
+        <p style="margin-top: 20px">
+          Whether you're navigating chronic health conditions, pursuing a more
+          vibrant lifestyle, or simply seeking to stay well-informed about your
+          overall well-being, Diary provides the comprehensive support and
+          insights you need.
+        </p>
+        <p style="margin-top: 20px">
+          Diary is designed to help you manage your health and wellness journey
+          with ease. Here are some key features:
+        </p>
+      </section>
     </div>
-    <div style="height: 3rem" aria-hidden="true" class="wp-block-spacer"></div>
+
+    <div class="container">
+      <div class="step">
+        <img src="assets/metrics-diary.svg" alt="Find a Doctor" />
+        <h2>Metrics</h2>
+        <p>
+          Easily monitor your body weight, height , waist circumference and BMI(
+          Body Mass Index) signs over time for better health management.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/vitals-diary.svg" alt="Calendar" />
+        <h2>Vitals Tracker</h2>
+        <p>
+          Track health metrics such as blood glucose, insulin dose, blood
+          pressure, pulse, SpO2, temperature and insulin titration is possible
+          with the help of appropriate vitals.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/diet-diary.svg" alt="Reminder" />
+        <h2>Diet Tracker</h2>
+        <p>
+          Keep track of your daily food intake, portion sizes, and any dietary
+          remarks and upload your images of food that you consume to track your
+          diet.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/sleep-diary.svg" alt="Reminder" />
+        <h2>Sleep Tracker</h2>
+        <p>
+          Use Sleep Tracker to manage your sleep. Record your sleep start and
+          end times, along with sleep duration, for better sleep management.
+        </p>
+      </div>
+      <div class="step">
+        <img src="assets/fitness.svg" alt="Reminder" />
+        <h2>Fitness</h2>
+        <p>
+          Regularly monitor and log your exercise routines and physical
+          activities to maintain peak fitness, stay active, and reach your
+          health goals.
+        </p>
+      </div>
+    </div>
+    <div style="height: 4rem" aria-hidden="true" class="wp-block-spacer"></div>
+    <div style="height: 2rem" aria-hidden="true" class="wp-block-spacer"></div>
 
     <section class="section">
       <div class="content">
@@ -515,39 +622,57 @@
           <div class="contact-left">
             <div class="request-box" style="padding: 40px">
               <h3>Send your request</h3>
-              <form>
-                <div class="input-row">
-                  <div class="input-group">
-                    <label style="color: #fff">Name</label>
-                    <input type="text" placeholder="John Amendo" />
-                  </div>
-                  <div class="input-group">
-                    <label style="color: #fff">Phone</label>
-                    <input type="text" placeholder="+91 9823829832" />
-                  </div>
+              <form class="contact-form" onsubmit="submitForm(event)">
+                <div class="input-group">
+                  <label style="color: #fff">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="John Amendo"
+                    required=""
+                    class="form-control"
+                  />
                 </div>
-                <div class="input-row">
-                  <div class="input-group">
-                    <label style="color: #fff">Email</label>
-                    <input type="email" placeholder="johnamendo@gmail.com" />
-                  </div>
-                  <div class="input-group">
-                    <label style="color: #fff">Subject</label>
-                    <input type="text" placeholder="Product Demo" />
-                  </div>
+                <div class="input-group">
+                  <label style="color: #fff">Phone</label>
+                  <input
+                    id="last-name"
+                    name="name"
+                    type="text"
+                    class="form-control"
+                    required=""
+                    placeholder="Phone"
+                  />
                 </div>
-                <label style="color: #fff">Message</label>
-                <textarea
-                  rows="5"
-                  placeholder="Your Message"
-                  style="font-family: sans-serif; font-size: 15px"
-                ></textarea>
-                <a
-                  href="#"
+                <div class="input-group">
+                  <label style="color: #fff">Email</label>
+                  <input
+                    class="domainSearchBar form-control"
+                    id="emailInput"
+                    name="email"
+                    type="email"
+                    required=""
+                    placeholder="johnamendo@gmail.com"
+                  />
+                </div>
+                <div class="input-group">
+                  <label style="color: #fff">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-control form-message"
+                    rows="5"
+                    required=""
+                    placeholder="Your Message"
+                  ></textarea>
+                </div>
+                <button
+                  type="button"
+                  onclick="submitForm()"
                   class="button-download"
-                  style="color: white; margin-top: 25px"
-                  >Send</a
                 >
+                  Send
+                </button>
               </form>
             </div>
           </div>
@@ -572,40 +697,44 @@
             </table>
             <div
               class="social-links"
-              style="margin-top: 215px; margin-bottom: 10px"
+              style="margin-top: 350px; margin-bottom: 10px"
             >
-              <a href="https://www.instagram.com/your_username"
-                ><img
+              <a href="https://www.instagram.com/your_username">
+                <img
                   src="assets/instagram.png"
                   alt="Instagram"
                   width="20"
                   height="20"
                   style="margin-right: 20px"
-              /></a>
-              <a href="https://www.linkedin.com/in/your_profile"
-                ><img
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/your_profile">
+                <img
                   src="assets/linkedIn.png"
                   alt="LinkedIn"
                   width="20"
                   height="20"
                   style="margin-right: 20px"
-              /></a>
-              <a href="https://www.facebook.com/your_page"
-                ><img
+                />
+              </a>
+              <a href="https://www.facebook.com/your_page">
+                <img
                   src="assets/facebook.png"
                   alt="Facebook"
                   width="20"
                   height="20"
                   style="margin-right: 20px"
-              /></a>
-              <a href="https://twitter.com/your_handle"
-                ><img
+                />
+              </a>
+              <a href="https://twitter.com/your_handle">
+                <img
                   src="assets/twitter.png"
                   alt="Twitter"
                   width="20"
                   height="20"
                   style="margin-right: 20px"
-              /></a>
+                />
+              </a>
             </div>
             <hr
               style="
@@ -622,19 +751,97 @@
                 align-items: center;
               "
             >
-              <p style="margin: 0; margin-right: 5px">For website queries:</p>
+              <p style="margin: 0; margin-right: 5px">For other queries:</p>
               <i
                 class="fas fa-phone"
                 style="color: #fff; margin-left: 10px"
               ></i>
               <span style="margin-left: 5px; padding-left: 3px"
-                >8459566241 (Aryan)</span
+                >+91 9994360912</span
               >
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      // JavaScript
+      function submitForm() {
+        // Get user input using getElementById
+        var userEmail = document.getElementById("emailInput").value;
+        var userPhone = document.getElementById("last-name").value;
+        var userName = document.getElementById("name").value;
+        var userMessage = document.getElementById("message").value;
+
+        // Validate email using a regular expression
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validate phone number
+        var phoneRegex = /^\d{10}$/;
+
+        var emailValid = emailRegex.test(userEmail);
+        var phoneValid = phoneRegex.test(userPhone);
+
+        if (emailValid && phoneValid) {
+          // Create JSON object
+          var data = {
+            object: "contact",
+            action: "A",
+            email: userEmail,
+            phone: userPhone,
+            name: userName,
+            message: userMessage,
+          };
+
+          // Make AJAX call
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/request", true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+              // Check the response status
+              if (xhr.status == 200) {
+                // Display thank you message for a successful response
+                showMessage(
+                  "Thank you for your Message. We will get back to you shortly."
+                );
+
+                // Clear the input fields
+                document.getElementById("emailInput").value = "";
+                document.getElementById("last-name").value = "";
+                document.getElementById("name").value = "";
+                document.getElementById("message").value = "";
+              } else {
+                // Display an error message for other response statuses
+                showMessage(
+                  "Error: Something went wrong. Please try again later."
+                );
+              }
+            }
+          };
+
+          // Convert data to JSON string
+          var jsonString = JSON.stringify(data);
+
+          // Send the request
+          xhr.send(jsonString);
+        } else {
+          // Display specific error messages for email and phone number
+          if (!emailValid) {
+            alert("Please enter a valid email address.");
+          } else if (!phoneValid) {
+            alert("Please enter a 10-digit phone number.");
+          }
+        }
+      }
+
+      function showMessage(message) {
+        // Display the message (you can implement this based on your UI structure)
+        alert(message);
+      }
+    </script>
     <script>
       const toggle = document.querySelector(".toggle");
       const menu = document.querySelector(".menu");
