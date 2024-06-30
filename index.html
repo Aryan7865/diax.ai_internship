@@ -214,7 +214,7 @@
           </p>
           <form class="signupForm">
             <div class="hero-actions">
-              <button type="button" onclick="submitForm()">Enroll Now</button>
+              <button type="button" onclick="submitEnroll()">Enroll Now</button>
               <div class="phone-number">
                 <input
                   class="searchBar"
@@ -1021,6 +1021,7 @@
                   <label style="color: #fff">Name</label>
                   <input
                     type="text"
+                    id="name"
                     name="name"
                     placeholder="John Amendo"
                     required=""
@@ -1325,7 +1326,7 @@
     </script>
 
     <script>
-      function submitForm() {
+      function submitEnroll() {
         // Get user input
         var userEmail = document.querySelector(".searchBar").value;
 

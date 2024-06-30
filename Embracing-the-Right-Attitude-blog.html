@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    /* General Styles */
+    /* styles.css */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    .hero-blog {
+      padding: 2rem 0;
+      background-color: #d5e9ee;
+      text-align: center;
+      height: 1120px;
+    }
+    .hero-heading {
+      font-size: 2.5rem;
+      text-align: left;
+      padding-left: 20px; /* Add padding to align at the start */
+      max-width: 1100px;
+      margin-left: auto;
+      font-family: MADE TOMMY, -apple-system, BlinkMacSystemFont, Segoe UI,
+        Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif !important;
+      margin-right: auto;
+      color: black;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .hero-container {
+      text-align: center; /* Center the date and buttons container */
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+
+    .hero-date {
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.7);
+      margin-bottom: 1rem;
+      animation: fadeInLeft 1s ease-in-out;
+      margin: 0;
+      text-align: left;
+      padding-left: 25px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      margin-top: 1.5rem;
+      text-align: left;
+      padding-left: 20px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.625rem;
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      border-radius: 9999px;
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: 500;
+      padding: 0.35rem 0.8rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-blog-image {
+      width: 100%;
+      border-radius: 30px;
+      margin: 0 auto;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .content {
+      padding: 2rem;
+      background-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-blog-image {
+        padding: 1rem;
+      }
+    }
+
+    /* Animation styles */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      text-align: left; /* Changed from center to left */
+      animation: fadeInUp 1s ease-in-out;
+      margin-left: auto; /* Center-align the heading container */
+      margin-right: auto; /* Center-align the heading container */
+      max-width: 1100px; /* Same max-width as intro-text */
+      font-family: MADE TOMMY, -apple-system, BlinkMacSystemFont, Segoe UI,
+        Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif !important;
+      color: black;
+    }
+
+    .intro-text.style1,
+    .intro-text.style2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      text-align: start;
+    }
+
+    .intro-text.style1 {
+      color: rgba(0, 0, 0, 0.7);
+      animation: fadeInLeft 1s ease-in-out;
+    }
+
+    .intro-text.style2 {
+      color: rgba(0, 0, 0, 0.7);
+      animation: fadeInRight 1s ease-in-out;
+    }
+
+    .content-image,
+    .chart-image,
+    .case-image {
+      width: 100%;
+      border-radius: 50px;
+      max-width: 600px;
+      display: block;
+      margin: 1rem auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .chart-image {
+      max-height: 750px;
+      margin-bottom: 100px;
+    }
+    .case-image {
+      max-height: 550px;
+    }
+
+    .content-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .responsive-table {
+      width: 85%;
+      border-collapse: collapse;
+      margin: 0 8rem;
+    }
+
+    .responsive-table th,
+    .responsive-table td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    .responsive-table th {
+      background: #00cdcd;
+      color: #fff;
+    }
+
+    .side-navbar {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      transition: width 0.3s ease-in-out;
+      overflow: hidden;
+      background: #00cdcd;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    .side-navbar:hover {
+      width: 200px;
+    }
+
+    .side-navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .side-navbar li {
+      text-align: right;
+      padding: 1rem;
+      animation: slideInRight 0.5s ease-in-out;
+    }
+
+    .side-navbar li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        transform: translateX(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(200px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .side-navbar {
+        display: none;
+      }
+      .responsive-table {
+        display: none;
+      }
+      .hero-blog {
+        height: auto;
+      }
+    }
+    @media (max-width: 500px) {
+      .nav-bar {
+        display: none !important;
+      }
+    }
+    :root {
+      --navbar-width: 180px;
+      --navbar-width-min: 80px;
+      --navbar-dark-primary: #333;
+      --navbar-dark-secondary: #555;
+      --navbar-light-primary: #fff;
+      --navbar-light-secondary: #aaa;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: var(--navbar-light-primary); /* White background */
+    }
+
+    #nav-toggle:checked ~ #nav-header {
+      width: calc(var(--navbar-width-min) - 16px);
+    }
+    #nav-toggle:checked ~ #nav-content,
+    #nav-toggle:checked ~ #nav-footer {
+      width: var(--navbar-width-min);
+    }
+    #nav-toggle:checked ~ #nav-header #nav-title {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.1s;
+    }
+    #nav-toggle:checked ~ #nav-header label[for="nav-toggle"] {
+      left: calc(50% - 8px);
+      transform: translate(-50%);
+    }
+    #nav-toggle:checked ~ #nav-header #nav-toggle-burger {
+      background: var(--navbar-dark-primary);
+    }
+    #nav-toggle:checked ~ #nav-header #nav-toggle-burger:before,
+    #nav-toggle:checked ~ #nav-header #nav-toggle-burger::after {
+      width: 16px;
+      background: var(--navbar-dark-secondary);
+      transform: translate(0, 0) rotate(0deg);
+    }
+    #nav-toggle:checked ~ #nav-content .nav-button span {
+      opacity: 0;
+      transition: opacity 0.1s;
+    }
+    #nav-toggle:checked ~ #nav-content .nav-button .fas {
+      min-width: calc(100% - 16px);
+    }
+    #nav-toggle:checked ~ #nav-footer #nav-footer-avatar {
+      margin-left: 0;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    #nav-toggle:checked ~ #nav-footer #nav-footer-titlebox,
+    #nav-toggle:checked ~ #nav-footer label[for="nav-footer-toggle"] {
+      opacity: 0;
+      transition: opacity 0.1s;
+      pointer-events: none;
+    }
+
+    #nav-bar {
+      position: fixed; /* Changed from absolute to fixed */
+      left: 1vw;
+      top: 50%; /* Center vertically */
+      transform: translateY(-50%); /* Center vertically */
+      height: 50%; /* Reduced height to 50% */
+      background: var(--navbar-dark-primary);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      color: var(--navbar-light-primary);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      overflow: hidden;
+      user-select: none;
+    }
+    #nav-bar hr {
+      margin: 0;
+      position: relative;
+      left: 16px;
+      width: calc(100% - 32px);
+      border: none;
+      border-top: solid 1px var(--navbar-dark-secondary);
+    }
+    #nav-bar a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+    #nav-bar input[type="checkbox"] {
+      display: none;
+    }
+
+    #nav-header {
+      position: relative;
+      width: var(--navbar-width);
+      left: 16px;
+      width: calc(var(--navbar-width) - 16px);
+      min-height: 80px;
+      background: var(--navbar-dark-primary);
+      border-radius: 16px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      transition: width 0.2s;
+    }
+    #nav-header hr {
+      position: relative;
+      bottom: 0;
+    }
+
+    #nav-title {
+      font-size: 1.5rem;
+      transition: opacity 1s;
+    }
+
+    label[for="nav-toggle"] {
+      position: absolute;
+      right: 0;
+      width: 3rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    #nav-toggle-burger {
+      position: relative;
+      width: 16px;
+      height: 2px;
+      background: var(--navbar-light-primary);
+      border-radius: 99px;
+      transition: background 0.2s;
+    }
+    #nav-toggle-burger:before,
+    #nav-toggle-burger:after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      width: 10px;
+      height: 2px;
+      background: var(--navbar-dark-secondary);
+      border-radius: 99px;
+      transform: translate(2px, 8px) rotate(30deg);
+      transition: 0.2s;
+    }
+    #nav-toggle-burger:after {
+      top: 6px;
+      transform: translate(2px, -8px) rotate(-30deg);
+    }
+
+    #nav-content {
+      margin: -16px 0;
+      padding: 16px 0;
+      position: relative;
+      flex: 1;
+      width: var(--navbar-width);
+      background: var(--navbar-dark-primary);
+      box-shadow: 0 0 0 16px var(--navbar-dark-primary);
+      direction: rtl;
+      overflow-x: hidden;
+      transition: width 0.2s;
+    }
+    #nav-content::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    #nav-content::-webkit-scrollbar-thumb {
+      border-radius: 99px;
+      background-color: #d62929;
+    }
+    #nav-content::-webkit-scrollbar-button {
+      height: 16px;
+    }
+
+    #nav-content-highlight {
+      position: absolute;
+      left: 16px;
+      top: -70px;
+      width: calc(100% - 16px);
+      height: 54px;
+      background: var(--navbar-light-primary);
+      background-attachment: fixed;
+      border-radius: 16px 0 0 16px;
+      transition: top 0.2s;
+    }
+    #nav-content-highlight:before,
+    #nav-content-highlight:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      box-shadow: 16px 16px var(--navbar-light-primary);
+    }
+    #nav-content-highlight:after {
+      top: 100%;
+      box-shadow: 16px -16px var(--navbar-light-primary);
+    }
+
+    .nav-button {
+      position: relative;
+      margin-left: 0px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      color: var(--navbar-light-secondary);
+      direction: ltr;
+      cursor: pointer;
+      z-index: 1;
+      transition: color 0.2s;
+    }
+    .nav-button span {
+      transition: opacity 1s;
+    }
+    .nav-button .fas {
+      transition: min-width 0.2s;
+    }
+    .nav-button:nth-of-type(1):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(1):hover ~ #nav-content-highlight {
+      top: 16px;
+    }
+    .nav-button:nth-of-type(2):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(2):hover ~ #nav-content-highlight {
+      top: 70px;
+    }
+    .nav-button:nth-of-type(3):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(3):hover ~ #nav-content-highlight {
+      top: 124px;
+    }
+    .nav-button:nth-of-type(4):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(4):hover ~ #nav-content-highlight {
+      top: 178px;
+    }
+    .nav-button:nth-of-type(5):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(5):hover ~ #nav-content-highlight {
+      top: 232px;
+    }
+    .nav-button:nth-of-type(6):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(6):hover ~ #nav-content-highlight {
+      top: 286px;
+    }
+    .nav-button:nth-of-type(7):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(7):hover ~ #nav-content-highlight {
+      top: 340px;
+    }
+    .nav-button:nth-of-type(8):hover {
+      color: var(--navbar-dark-primary);
+    }
+    .nav-button:nth-of-type(8):hover ~ #nav-content-highlight {
+      top: 394px;
+    }
+
+    #nav-bar .fas {
+      min-width: 3rem;
+      text-align: center;
+    }
+
+    #nav-footer {
+      position: relative;
+      width: var(--navbar-width);
+      height: 54px;
+      background: var(--navbar-dark-secondary);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+      transition: width 0.2s, height 0.2s;
+    }
+
+    #nav-footer-heading {
+      position: relative;
+      width: 100%;
+      height: 54px;
+      display: flex;
+      align-items: center;
+    }
+
+    #nav-footer-avatar {
+      position: relative;
+      margin: 11px 0 11px 16px;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #d62929;
+      box-shadow: 0 0 0 2px var(--navbar-light-primary);
+      transition: margin-left 0.2s, left 0.2s;
+    }
+
+    #nav-footer-titlebox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: 16px;
+      transition: opacity 0.2s;
+    }
+
+    label[for="nav-footer-toggle"] {
+      position: relative;
+      width: 100%;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    #nav-footer-burger {
+      position: relative;
+      width: 16px;
+      height: 2px;
+      background: var(--navbar-light-primary);
+      border-radius: 99px;
+      transition: background 0.2s;
+    }
+
+    #nav-footer-burger:before,
+    #nav-footer-burger:after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      width: 10px;
+      height: 2px;
+      background: var(--navbar-dark-secondary);
+      border-radius: 99px;
+      transform: translate(2px, 8px) rotate(30deg);
+      transition: 0.2s;
+    }
+
+    #nav-footer-burger:after {
+      top: 6px;
+      transform: translate(2px, -8px) rotate(-30deg);
+    }
+
+    #nav-footer-links {
+      position: relative;
+      flex: 1;
+      padding: 0 16px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    #nav-footer-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      color: var(--navbar-light-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    #nav-footer-links a:hover {
+      color: var(--navbar-dark-primary);
+    }
+    /* about us styles*/
+    .about-box {
+      background-color: #b2e99e;
+      padding: 40px;
+      border-radius: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-box p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .about-box {
+        padding: 15px;
+      }
+
+      .about-box h2 {
+        font-size: 1.5rem;
+      }
+
+      .about-box p {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li class="logo">
+          <a href="#"
+            ><img
+              src="assets/Group 3.png"
+              alt="DiaX.ai"
+              style="height: 50px; width: 150px"
+          /></a>
+        </li>
+        <li class="item"><a href="index.html">Home</a></li>
+        <li class="item"><a href="#about">About</a></li>
+        <li class="item"><a href="diary.html">Diary</a></li>
+
+        <li class="item"><a href="dialog.html">Dialog</a></li>
+        <li class="item"><a href="diabrain.html">DiaBrain</a></li>
+        <!-- <li class="item has-submenu">
+          <a tabindex="0">Dialog</a>
+          <ul class="submenu">
+            <li class="subitem"><a href="#">Design</a></li>
+            <li class="subitem"><a href="#">Development</a></li>
+            <li class="subitem"><a href="#">SEO</a></li>
+            <li class="subitem"><a href="#">Copywriting</a></li>
+          </ul>
+        </li> -->
+        <!-- <li class="item has-submenu">
+          <a tabindex="0">DiaBrain</a>
+          <ul class="submenu">
+            <li class="subitem"><a href="#">Freelancer</a></li>
+            <li class="subitem"><a href="#">Startup</a></li>
+            <li class="subitem"><a href="#">Enterprise</a></li>
+          </ul>
+        </li> -->
+
+        <li class="item button"><a href="#contact">Contact Us </a></li>
+        <li class="item button secondary">
+          <a href="https://diary.diax.ai/">Diary App</a>
+        </li>
+        <li class="toggle">
+          <a href="#"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero-blog">
+        <h2 class="hero-heading">Embracing the Right Attitude</h2>
+        <h2 class="hero-heading">A Saga of Health and Resilience</h2>
+        <div
+          style="height: 1rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <p class="hero-date">May 10, 2024</p>
+        <div class="hero-buttons">
+          <button class="btn-primary">Blogs</button>
+          <button class="btn-secondary">Featured</button>
+        </div>
+        <img
+          src="blog-images/Embracing the Right Attitude-blog.jpg"
+          alt="Healthcare Blog"
+          class="hero-blog-image"
+        />
+      </section>
+      <div
+        style="height: 14rem"
+        aria-hidden="true"
+        class="wp-block-spacer"
+      ></div>
+
+      <section class="content">
+        <h2 id="introduction">Introduction</h2>
+        <p class="intro-text style1">
+          Meet an extraordinary individual, a stalwart at 88, who serves as a
+          living testament to the power of a positive approach to health. In a
+          world often marked by skepticism towards healthcare, he emerges as a
+          beacon of trust. Despite his background as an auditor, he entrusts his
+          well-being to doctors. In turn, they approach his care with compassion
+          and a determination to enrich his life with both health and longevity.
+        </p>
+        <!-- <p class="intro-text style2">
+          Yes, you read that right! Data holds the key to managing diabetes
+          better and ensuring continuity of care. In this blog post, we will
+          explore why storing health data is essential for effective treatment
+          and how electronic health records (EHR) can make a significant
+          difference in diabetic care. So sit back, relax and get ready to
+          discover the link between diabetes and data!
+        </p> -->
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <h2 id="Meet-Dr-Sivakumar">Meet Dr.Sivakumar</h2>
+
+        <p class="intro-text style1">
+          Dr. Sivakumar is a diabetic care practitioner based in a tier 2 city
+          in India. His journey began in 2004 when he started capturing digital
+          health records on behalf of his patients at his clinic. This approach
+          significantly reduced the burden on patients who no longer needed to
+          carry physical paper records. Moreover, it enabled Dr. Sivakumar to
+          provide better care by facilitating easy retrieval of vital parameters
+          such as blood sugar levels, pulse, BMI, and blood pressure.
+          Additionally, the digitization of health records allowed him to
+          provide printed prescriptions, which increased patient compliance
+          compared to the traditional method of handwritten prescriptions.
+        </p>
+        <p class="intro-text style2">
+          In 2009, Dr. Sivakumar and his team built an electronic medical
+          records (EMR) system for their clinic with the help of a software
+          development company. This implementation resulted in a reduction in
+          operational tasks, freeing up more time for providing enhanced care to
+          patients. By using the EMR system, Dr. Sivakumar was able to identify
+          prescription patterns and deliver faster and more effective
+          medications to his patients. The system also provided the ability to
+          visualize trends in vital parameters and review past performance,
+          enabling him to make prompt and informed decisions in patient care.
+        </p>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <div class="about-box">
+          <h2 id="about-our-app">Trust in Healthcare Professionals</h2>
+
+          <p class="intro-text style1" style="color: black">
+            Our protagonist's story begins with his unwavering faith in
+            healthcare professionals. As an auditor, he has a keen eye for
+            detail and a critical mind.
+          </p>
+          <p class="intro-text style2" style="color: black">
+            However, when it comes to his health, he chooses to place his trust
+            in his doctors. This trust is not misplaced. His healthcare
+            providers reciprocate with a commitment to his well-being, treating
+            him with compassion and expertise.
+          </p>
+        </div>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <h2 id="about-our-app">Commitment to Health</h2>
+
+        <p class="intro-text style1">
+          Despite encountering minor adverse reactions, his commitment to health
+          remained steadfast. In an era dominated by social media noise and
+          misinformation, he sought clarity on the benefits of statins for
+          long-term prevention of cardiovascular disease. His singular focus on
+          well-being guided his decision-making process.
+        </p>
+        <p class="intro-text style2">
+          Although he was averse to low-dose aspirin due to intolerance, he
+          continued with statins. This choice, combined with his disciplined
+          lifestyle, significantly contributed to his extended and healthy life.
+        </p>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <div class="about-box">
+          <h2 id="case-study-1">Overcoming Health Challenges</h2>
+
+          <p class="intro-text style1" style="color: black">
+            Recently, he faced a severe bout of anemia, a condition often
+            perceived as an inevitable decline in old age. However, modern
+            medical investigations uncovered a different narrative: internal
+            bleeding from the gastrointestinal tract.
+          </p>
+          <p class="intro-text style2" style="color: black">
+            Swift intervention, including blood transfusions and iron infusions,
+            rectified his anemia. The root cause, gastritis, was identified and
+            addressed. Today, he stands as a testament to the transformative
+            power of contemporary healthcare.
+          </p>
+        </div>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <h2 id="about-our-app">The Role of Data Visualization</h2>
+
+        <p class="intro-text style1">
+          Data visualization played a crucial role in his health journey. It
+          unraveled a past episode of anemia that had been rectified without
+          signs of occult bleeding. With the assistance of digital records, the
+          cause of his recent anemia was swiftly pinpointed and remedied. This
+          integration of technology ensures comprehensive and holistic care.
+        </p>
+        <img
+          src="blog-images/embracing-right-attitude-blog.jpeg"
+          alt="About Our App"
+          class="chart-image"
+        />
+
+        <h2 id="about-our-app">Diax.ai: Empowering Health with Technology</h2>
+
+        <p class="intro-text style1">
+          This is where Diax.ai's tools, Diary and Dialog, come into play. Diary
+          empowers individuals to maintain their health records, while Dialog
+          facilitates seamless communication between patients and healthcare
+          providers. Together, they ensure that every piece of the health puzzle
+          is in place.
+        </p>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <div class="about-box">
+          <h2 id="case-study-1">Diary: Maintaining Health Records</h2>
+
+          <p class="intro-text style1" style="color: black">
+            Diary enables patients to compile and maintain their health records
+            comprehensively. By having access to a complete history of their
+            medical conditions, treatments, and outcomes, patients and
+            healthcare providers can make informed decisions. This tool empowers
+            individuals to take control of their health journey, ensuring that
+            vital information is always at their fingertips.
+          </p>
+        </div>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <h2 id="case-study-1">Dialog: Facilitating Communication</h2>
+
+        <p class="intro-text style1" style="color: black">
+          Dialog bridges the communication gap between patients and healthcare
+          providers. It allows for secure and efficient sharing of health
+          information, enabling timely interventions and better health outcomes.
+          With Dialog, patients can discuss their concerns, share updates, and
+          receive guidance from their doctors, all within a secure digital
+          environment.
+        </p>
+        <div
+          style="height: 3rem"
+          aria-hidden="true"
+          class="wp-block-spacer"
+        ></div>
+        <div class="about-box">
+          <h2 id="case-study-1">Conclusion</h2>
+
+          <p class="intro-text style1" style="color: black">
+            The story of our 88-year-old protagonist is a powerful reminder of
+            the impact of a positive attitude and trust in healthcare. His
+            journey, marked by resilience and faith in modern medicine,
+            underscores the importance of comprehensive and holistic care.
+          </p>
+          <p class="intro-text style2" style="color: black">
+            With the integration of technology through tools like Diax.ai's
+            Diary and Dialog, we can ensure that every individual has access to
+            the best possible healthcare. By embracing the right attitude and
+            leveraging cutting-edge technology, we can all strive for a
+            healthier and more resilient future.
+          </p>
+        </div>
+      </section>
+    </main>
+    <div class="nav-bar" id="nav-bar">
+      <input id="nav-toggle" type="checkbox" />
+      <div id="nav-header">
+        <a id="nav-title" href="#">Diax.AI</a>
+        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+        <hr />
+      </div>
+      <div id="nav-content">
+        <div class="nav-button">
+          <i class="fas fa-home"></i
+          ><a href="#introduction"><span>Introduction</span></a>
+        </div>
+        <div class="nav-button">
+          <i class="fas fa-info"></i
+          ><a href="#meet-dr-sivakumar"><span>Meet Dr Sivakumar</span></a>
+        </div>
+        <div class="nav-button">
+          <i class="fas fa-envelope"></i
+          ><a href="#about-our-app"><span>About our App </span></a>
+        </div>
+        <hr />
+        <div class="nav-button">
+          <i class="fas fa-cogs"></i
+          ><a href="#case-study-1"><span>Case Study 1</span></a>
+        </div>
+        <div class="nav-button">
+          <i class="fas fa-blog"></i
+          ><a href="#tabulation"><span>Tabulation</span></a>
+        </div>
+
+        <div class="nav-button">
+          <i class="fas fa-blog"></i><span>Result</span>
+        </div>
+        <div id="nav-content-highlight"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel=" stylesheet" href="css/slick.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+    />
+    <link rel="stylesheet" href="blogs-style.css" />
+  </head>
+  <style>
+    nav {
+      background: white;
+      padding: 0 40px;
+      margin-top: 20px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    .menu,
+    .submenu {
+      list-style-type: none;
+    }
+    .logo {
+      font-size: 20px;
+      padding: 0px 10px 7.5px 0;
+    }
+    .item {
+      padding: 10px;
+    }
+    .item.button {
+      padding: 9px 5px;
+    }
+    .item:not(.button) a:hover,
+    .item a:hover::after {
+      color: #ccc;
+    }
+    /* Mobile menu */
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu li a {
+      display: block;
+      padding: 15px 5px;
+    }
+    .menu li.subitem a {
+      padding: 15px;
+    }
+    .toggle {
+      order: 1;
+      font-size: 20px;
+    }
+    .item.button {
+      order: 2;
+    }
+    .item {
+      order: 3;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+    .active .item {
+      display: block;
+    }
+    .button.secondary {
+      /* divider between buttons and menu links */
+      border-bottom: 1px #444 solid;
+    }
+    /* Submenu up from mobile screens */
+    .submenu {
+      display: none;
+    }
+    .submenu-active .submenu {
+      display: block;
+    }
+    .has-submenu i {
+      font-size: 12px;
+    }
+    .has-submenu > a::after {
+      font-family: "Font Awesome 5 Free";
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 900;
+      content: "\f078";
+      color: white;
+      padding-left: 5px;
+    }
+    .subitem a {
+      padding: 10px 15px;
+    }
+    .submenu-active {
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    /* Tablet menu */
+    @media all and (min-width: 700px) {
+      .menu {
+        justify-content: center;
+      }
+      .logo {
+        flex: 1;
+      }
+      .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+      }
+      .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+      }
+      /* Button up from tablet screen */
+      .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+      }
+      .button a {
+        background-color: rgba(101, 103, 236, 1);
+        border: 1px royalblue solid;
+        color: #fff;
+        border-radius: 6px;
+      }
+      .button.secondary {
+        border: 0;
+      }
+      .button.secondary a {
+        background: transparent;
+        border: 1px rgba(101, 103, 236, 1) solid;
+        color: black;
+      }
+
+      .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+      }
+    }
+    /* Desktop menu */
+    @media all and (min-width: 960px) {
+      .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+      }
+      .logo {
+        order: 0;
+      }
+      .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+      }
+      .button {
+        order: 2;
+      }
+      .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: white;
+      }
+      .toggle {
+        display: none;
+      }
+      .submenu-active {
+        border-radius: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="site-wrapper">
+      <div class="main-overlay"></div>
+      <nav>
+        <ul class="menu">
+          <li class="logo">
+            <a href="#"
+              ><img
+                src="assets/Group 3.png"
+                alt="DiaX.ai"
+                style="height: 50px; width: 150px"
+            /></a>
+          </li>
+          <li class="item">
+            <a href="index.html" style="color: black">Home</a>
+          </li>
+          <li class="item"><a href="#about" style="color: black">About</a></li>
+          <li class="item">
+            <a href="diary.html" style="color: black">Diary</a>
+          </li>
+
+          <li class="item">
+            <a href="dialog.html" style="color: black">Dialog</a>
+          </li>
+          <li class="item">
+            <a href="diabrain.html" style="color: black">DiaBrain</a>
+          </li>
+          <!-- <li class="item has-submenu">
+          <a tabindex="0">Dialog</a>
+          <ul class="submenu">
+            <li class="subitem"><a href="#">Design</a></li>
+            <li class="subitem"><a href="#">Development</a></li>
+            <li class="subitem"><a href="#">SEO</a></li>
+            <li class="subitem"><a href="#">Copywriting</a></li>
+          </ul>
+        </li> -->
+          <!-- <li class="item has-submenu">
+          <a tabindex="0">DiaBrain</a>
+          <ul class="submenu">
+            <li class="subitem"><a href="#">Freelancer</a></li>
+            <li class="subitem"><a href="#">Startup</a></li>
+            <li class="subitem"><a href="#">Enterprise</a></li>
+          </ul>
+        </li> -->
+
+          <li class="item button"><a href="#contact">Contact Us </a></li>
+          <li class="item button secondary">
+            <a href="https://diary.diax.ai/">Diary App</a>
+          </li>
+          <li class="toggle">
+            <a href="#"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- section starts  -->
+      <section id="hero">
+        <div class="container-xl">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="post featured-post-lg">
+                <div class="details clearfix">
+                  <a href="#" class="category-badge">Healthcare</a>
+                  <h2 class="post-title">
+                    <a href="blog-page.html"
+                      >Rural doctors using technology to provide better care.
+                    </a>
+                  </h2>
+                  <ul class="meta list-inline mb-0">
+                    <li class="list-inline-item">
+                      <a href="#">Dr Sivakumar</a>
+                    </li>
+                    <li class="list-inline-item">30 May 2021</li>
+                  </ul>
+                </div>
+                <a href="blog-page.html">
+                  <div class="thumb rounded">
+                    <div
+                      class="inner data-bg-image"
+                      data-bg-image="assets/rural-healthcare.jpg"
+                    ></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="post-tabs rounded bordered">
+                <ul
+                  class="nav nav-tabs nav-pills nav-fill"
+                  id="postTab"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      aria-controls="popular"
+                      aria-selected="true"
+                      class="nav-link active"
+                      data-bs-target="#popular"
+                      data-bs-toggle="tab"
+                      id="popular-tab"
+                      role="tab"
+                      type="button"
+                    >
+                      Popular
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      aria-controls="recent"
+                      aria-selected="false"
+                      class="nav-link"
+                      data-bs-target="#recent"
+                      data-bs-toggle="tab"
+                      id="recent-tab"
+                      role="tab"
+                      type="button"
+                    >
+                      Recent
+                    </button>
+                  </li>
+                </ul>
+
+                <!-- content  -->
+                <div class="tab-content" id="postsTabContent">
+                  <!-- loader -->
+                  <div class="lds-dual-ring"></div>
+                  <!-- pop post  -->
+
+                  <div
+                    class="tab-pane fade show active"
+                    id="popular"
+                    aria-labelledby="popular-tab"
+                    role="tabpanel"
+                  >
+                    <!-- post  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="emr-blog.html">
+                          <div class="inner">
+                            <img
+                              src="assets/emr-blogs.jpg"
+                              style="height: 50px"
+                              alt="emr-blog.html"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="emr-blog.html">How EMR help society?</a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">24 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- post2  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="Empowering-the-Next-Generation.html">
+                          <div class="inner">
+                            <img
+                              src="images/posts/tabs-2.jpg"
+                              style="height: 55px"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="Empowering-the-Next-Generation.html"
+                            >Empowering the Next Generation Fostering a Culture
+                            of Health Literacy</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">26 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- post3  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="Power-of-Data-Visualization.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images/Unraveling the Power of Data Visualization in Diabetes-blog.jpg"
+                              alt=""
+                              style="height: 50px"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="Power-of-Data-Visualization.html"
+                            >Unraveling the Power of Data Visualization in
+                            Diabetes Care</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">28 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- post4  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="optimal-data-blog.html">
+                          <div class="inner">
+                            <img
+                              src="assets/optimal-data-blog.webp"
+                              style="height: 50px"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="optimal-data-blog.html"
+                            >Unlocking the Power of Optimal Data Saving Lives
+                            Through Technology</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">01 Jun 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- recent  -->
+                  <div
+                    class="tab-pane fade"
+                    id="recent"
+                    aria-labelledby="recent-tab"
+                    role="tabpanel"
+                  >
+                    <!-- post  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="ai-impact-blog.html">
+                          <div class="inner">
+                            <img
+                              src="assets/ai-blog.jpg"
+                              style="height: 55px"
+                              alt="ai-impact-blog.html"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="ai-impact-blog.html"
+                            >How AI impact in medical service?</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">24 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- post2  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="Empowering-Continuity-blog.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images/continuity-blogs.webp"
+                              alt=""
+                              style="height: 55px"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="Empowering-Continuity-blog.html"
+                            >Empowering Continuity of Care with Cutting-Edge
+                            Technology
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">26 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- post3  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="connecting-medicine-blog.html">
+                          <div class="inner">
+                            <img src="images/posts/tabs-5.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="connecting-medicine-blog.html"
+                            >Connecting Medicine, Mathematics and Technology
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">28 Jun 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- post4  -->
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <a href="advancing-healthcare.html">
+                          <div class="inner">
+                            <img src="images/posts/tabs-3.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="advancing-healthcare.html"
+                            >Advancing Healthcare:A Parallel to Autonomous
+                            Driving
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">04 Jun 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- main content  -->
+
+      <section class="main-content">
+        <div class="container-xl">
+          <div class="row gy-4">
+            <!-- left part 1st section  -->
+            <div class="col-lg-8">
+              <div class="section-header">
+                <h3 class="section-title">Editor's Pick</h3>
+              </div>
+
+              <div class="padding-30 rounded bordered">
+                <div class="row gy-5">
+                  <div class="col-sm-6">
+                    <!-- post  -->
+                    <div class="post">
+                      <div class="thumb rounded">
+                        <a href="#" class="category-badge position-absolute"
+                          >Diabwellness</a
+                        >
+                        <span class="post-format">
+                          <i class="icon-picture"></i>
+                        </span>
+                        <a href="empowering-health-decision.html">
+                          <div class="inner">
+                            <img
+                              src="assets\Empowering Informed Health Decisions-blogs.webp"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <ul class="meta list-inline mt-4 mb-0">
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <img
+                              class="author"
+                              src="images/other/author-sm.jpg"
+                              alt=""
+                            />
+                            Dr Sivakumar
+                          </a>
+                        </li>
+                        <li class="list-inline-item">05 Jun 2021</li>
+                      </ul>
+                      <h5 class="post-title mb-3 mt-3">
+                        <a href="#"
+                          >Empowering Informed Health Decisions: Navigating the
+                          Sea of Information</a
+                        >
+                      </h5>
+                      <p class="excerpt mb-0">
+                        Ensuring that people can access reliable, actionable
+                        information is essential for empowering them to make
+                        informed health decisions.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="post post-list-sm square">
+                      <div class="thumb rounded">
+                        <a href="#">
+                          <div class="inner">
+                            <img
+                              src="blog-images/eternal-cycle-curoisity-blog.jpg"
+                              alt="Eternal-Cycle-blog.html"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="Eternal-Cycle-blog.html">
+                            The Eternal Cycle: Where Curiosity Ignites Discovery
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">25 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm square">
+                      <div class="thumb rounded">
+                        <a href="Intricate-Dance-blog.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images/The Intricate Dance of Medicine and Data-blog.avif"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="Intricate-Dance-blog.html">
+                            Beyond Rules: The Intricate Dance of Medicine and
+                            Data
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">25 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm square">
+                      <div class="thumb rounded">
+                        <a href="optimising-diabetes-care.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images/Optimising Diabetes Care-blogs.webp"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="optimising-diabetes-care.html">
+                            Optimising Diebetes Care
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">28 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm square">
+                      <div class="thumb rounded">
+                        <a href="emr-blog.html">
+                          <div class="inner">
+                            <img src="assets/emr-blogs.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="emr-blog.html"> How EMR help society? </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">28 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spacer" data-height="50"></div>
+
+              <div class="section-header">
+                <h3 class="section-title">Trending</h3>
+              </div>
+
+              <div class="padding-30 rounded bordered">
+                <div class="row gy-5">
+                  <div class="col-sm-6">
+                    <div class="post">
+                      <div class="thumb rounded">
+                        <a
+                          href="/ai-impact-blog.html"
+                          class="category-badge position-absolute"
+                          >Wellness</a
+                        >
+                        <span class="post-format">
+                          <i class="icon-picture"></i>
+                        </span>
+                        <a href="ai-impact-blog.html">
+                          <div class="inner">
+                            <img
+                              src="assets/ai-blog.jpg"
+                              alt="ai-impact-blog.html"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <ul class="meta list-inline mt-4 mb-0">
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <img
+                              src="images/other/author-sm.jpg"
+                              class="author"
+                              alt="ai-impact-blog.html"
+                            />
+                            Dr Sivakumar
+                          </a>
+                        </li>
+                        <li class="list-inline-item">24 May 2021</li>
+                      </ul>
+                      <h5 class="post-title mb-3 mt-3">
+                        <a href="#">How AI impact in medical service? </a>
+                      </h5>
+                      <p class="excerpt mb-0">
+                        Diagnostic assistance in AI represents a transformative
+                        approach to medical diagnosis, leveraging advanced
+                        algorithms and machine learning techniques to augment
+                        the expertise of medical professionals.
+                      </p>
+                    </div>
+
+                    <!-- <div class="post post-list-sm square before-seperator">
+                      <div class="thumb rounded">
+                        <a href="#">
+                          <div class="inner">
+                            <img src="images/posts/tren-sm-1.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="#"
+                            >IPL 2021 to resume in sept 3rd week in UAE</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">25 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm square before-seperator">
+                      <div class="thumb rounded">
+                        <a href="#">
+                          <div class="inner">
+                            <img src="images/posts/tren-sm-2.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="#"
+                            >HDFC Bank concerned over retail asset quality in
+                            near-term</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">25 May 2021</li>
+                        </ul>
+                      </div>
+                    </div> -->
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="post">
+                      <div class="thumb rounded">
+                        <a href="#" class="category-badge position-absolute"
+                          >Technology</a
+                        >
+                        <span class="post-format">
+                          <i class="icon-earphones"></i>
+                        </span>
+                        <a href="Empowering-Continuity-blog.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images/continuity-blogs.webp"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <ul class="meta list-inline mt-4 mb-0">
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <img
+                              src="images/other/author-sm.jpg"
+                              class="author"
+                              alt=""
+                            />
+                            Dr Sivakumar
+                          </a>
+                        </li>
+                        <li class="list-inline-item">29 May 2021</li>
+                      </ul>
+                      <h5 class="post-title mb-3 mt-3">
+                        <a href="Empowering-Continuity-blog.html"
+                          >Empowering Continuity of Care with Cutting-Edge
+                          Technology</a
+                        >
+                      </h5>
+                      <p class="excerpt mb-0">
+                        In managing lifestyle diseases like diabetes, continuity
+                        of care is paramount for a comprehensive approach. This
+                        continuity saves time, reduces travel costs, and ensures
+                        security for healthcare providers.
+                      </p>
+                    </div>
+
+                    <!-- <div class="post post-list-sm square before-seperator">
+                      <div class="thumb rounded">
+                        <a href="#">
+                          <div class="inner">
+                            <img src="images/posts/tren-sm-3.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="#"
+                            >Arogya ap to display vaccination status</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">25 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm square before-seperator">
+                      <div class="thumb rounded">
+                        <a href="#">
+                          <div class="inner">
+                            <img src="images/posts/tren-sm-4.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="#"
+                            >Petrol, diesel prices hiked again today.</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">25 May 2021</li>
+                        </ul>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="spacer" data-height="50"></div>
+
+              <div class="section-header">
+                <h3 class="section-title">Inspiration</h3>
+                <div class="slick-arrows-top">
+                  <buttton
+                    class="carousel-topNav-prev slick-custom-buttons"
+                    type="button"
+                    data-role="none"
+                    aria-label="Previous"
+                  >
+                    <i class="icon-arrow-left"></i>
+                  </buttton>
+                  <buttton
+                    class="carousel-topNav-next slick-custom-buttons"
+                    type="button"
+                    data-role="none"
+                    aria-label="Next"
+                  >
+                    <i class="icon-arrow-right"></i>
+                  </buttton>
+                </div>
+              </div>
+
+              <div class="row post-carousel-twoCol post-carousel">
+                <div class="post post-over-content col-md-6">
+                  <div class="details clearfix">
+                    <a href="#" class="category-badge">AI/ML</a>
+                    <h4 class="post-title">
+                      <a href="Empowering-the-Next-Generation.html"
+                        >Empowering the Next Generation Fostering a Culture of
+                        Health Literacy</a
+                      >
+                    </h4>
+                    <ul class="meta list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a href="#">Dr Sivakumar</a>
+                      </li>
+                      <li class="list-inline-item">03 Jun 2021</li>
+                    </ul>
+                  </div>
+                  <a href="Empowering-the-Next-Generation.html">
+                    <div class="thumb rounded">
+                      <div class="inner">
+                        <img src="blog-images/next gen-blogs.jpg" alt="" />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="post post-over-content col-md-6">
+                  <div class="details clearfix">
+                    <a href="#" class="category-badge">Technology</a>
+                    <h4 class="post-title">
+                      <a href="optimal-data-blog.html"
+                        >Unlocking the Power of Optimal Data Saving Lives
+                        Through Technology</a
+                      >
+                    </h4>
+                    <ul class="meta list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a href="optimal-data-blog.html">Dr Sivakumar</a>
+                      </li>
+                      <li class="list-inline-item">02 Jun 2021</li>
+                    </ul>
+                  </div>
+                  <a href="optimal-data-blog.html">
+                    <div class="thumb rounded">
+                      <div class="inner">
+                        <img
+                          src="assets/optimal-data-blog.webp"
+                          alt="optimal-data-blog.html"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="post post-over-content col-md-6">
+                  <div class="details clearfix">
+                    <a href="#" class="category-badge">Technology</a>
+                    <h4 class="post-title">
+                      <a href="Technology-Diabrain-blog.html"
+                        >Technology - Diabrain: Catalyst for a New Era in
+                        Clinical Medicine</a
+                      >
+                    </h4>
+                    <ul class="meta list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a href="#">Dr Sivakumar</a>
+                      </li>
+                      <li class="list-inline-item">01 Jun 2021</li>
+                    </ul>
+                  </div>
+                  <a href="#">
+                    <div class="thumb rounded">
+                      <div class="inner">
+                        <img
+                          src="blog-images/Technology - Diabrain-blog.jpg"
+                          alt="Technology-Diabrain-blog.html"
+                          style="height: 235px"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="spacer" data-height="50"></div>
+
+              <div class="section-header">
+                <h3 class="section-title">Latest Posts</h3>
+              </div>
+
+              <div class="padding-30 rounded bordered">
+                <div class="row">
+                  <div class="col-md-12 col-sm-6">
+                    <!-- post  -->
+                    <div class="post post-list clearfix">
+                      <div class="thumb rounded">
+                        <span class="post-format-sm">
+                          <i class="icon-picture"></i>
+                        </span>
+                        <a href="blog-page.html">
+                          <div class="inner">
+                            <img
+                              src="assets/rural-healthcare.jpg"
+                              style="height: 200px"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details">
+                        <ul class="meta list-inline mb-3">
+                          <li class="list-inline-item">
+                            <a href="blog-page.html">
+                              <img
+                                src="images/other/author-sm.jpg"
+                                class="author"
+                                alt=""
+                              />
+                              Dr Sivakumar
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="#">Trending</a>
+                          </li>
+                          <li class="list-inline-item">26 May 2021</li>
+                        </ul>
+                        <h5 class="post-tile">
+                          <a href="#">
+                            Rural doctors using technology to provide better
+                            care.
+                          </a>
+                        </h5>
+                        <p class="excerpt mb-0">
+                          Managing diabetes requires constant monitoring,
+                          medication, and lifestyle changes.
+                        </p>
+                        <div
+                          class="post-bottom clearfix d-flex align-items-center"
+                        >
+                          <div class="social-share me-auto">
+                            <button class="toggle-button icon-share"></button>
+                            <ul class="icons list-unstyled list-inline mb-0">
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-facebook-f"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-linkedin-in"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-telegram-plane"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="more-button float-end">
+                            <a href="#"><span class="icon-options"></span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-6">
+                    <!-- post  -->
+                    <div class="post post-list clearfix">
+                      <div class="thumb rounded">
+                        <a href="Power-of-Data-Visualization.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images\Unraveling the Power of Data Visualization in Diabetes-blog.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details">
+                        <ul class="meta list-inline mb-3">
+                          <li class="list-inline-item">
+                            <a href="#">
+                              <img
+                                src="images/other/author-sm.jpg"
+                                class="author"
+                                alt=""
+                              />
+                              Techie Coder
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="#">Technology</a>
+                          </li>
+                          <li class="list-inline-item">26 May 2021</li>
+                        </ul>
+                        <h5 class="post-tile">
+                          <a href="Power-of-Data-Visualization.html">
+                            Unraveling the Power of Data Visualization in
+                            Diabetes Care
+                          </a>
+                        </h5>
+                        <p class="excerpt mb-0">
+                          Meet a remarkable woman who has been managing Type 2
+                          Diabetes for nearly 27 years.
+                        </p>
+                        <div
+                          class="post-bottom clearfix d-flex align-items-center"
+                        >
+                          <div class="social-share me-auto">
+                            <button class="toggle-button icon-share"></button>
+                            <ul class="icons list-unstyled list-inline mb-0">
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-facebook-f"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-linkedin-in"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-telegram-plane"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="more-button float-end">
+                            <a href="#"><span class="icon-options"></span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-6">
+                    <!-- post  -->
+                    <div class="post post-list clearfix">
+                      <div class="thumb rounded">
+                        <span class="post-format-sm">
+                          <i class="icon-camrecorder"></i>
+                        </span>
+                        <a href="Embracing-the-Right-Attitude-blog.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images/Embracing the Right Attitude-blog.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details">
+                        <ul class="meta list-inline mb-3">
+                          <li class="list-inline-item">
+                            <a href="#">
+                              <img
+                                src="images/other/author-sm.jpg"
+                                class="author"
+                                alt=""
+                              />
+                              Dr Sivakumar
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="#">Technology</a>
+                          </li>
+                          <li class="list-inline-item">26 May 2021</li>
+                        </ul>
+                        <h5 class="post-tile">
+                          <a href="Embracing-the-Right-Attitude-blog.html">
+                            Embracing the Right Attitude A Saga of Health and
+                            Resilience
+                          </a>
+                        </h5>
+                        <p class="excerpt mb-0">
+                          Meet an extraordinary individual, a stalwart at 88,
+                          who serves as a living testament to the power of a
+                          positive approach to health.
+                        </p>
+                        <div
+                          class="post-bottom clearfix d-flex align-items-center"
+                        >
+                          <div class="social-share me-auto">
+                            <button class="toggle-button icon-share"></button>
+                            <ul class="icons list-unstyled list-inline mb-0">
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-facebook-f"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-linkedin-in"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-telegram-plane"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="more-button float-end">
+                            <a href="#"><span class="icon-options"></span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-12 col-sm-6">
+                    
+                    <div class="post post-list clearfix">
+                      <div class="thumb rounded">
+                        <a href="#">
+                          <div class="inner">
+                            <img src="images/posts/latest-4.jpg" alt="" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details">
+                        <ul class="meta list-inline mb-3">
+                          <li class="list-inline-item">
+                            <a href="#">
+                              <img
+                                src="images/other/author-sm.jpg"
+                                class="author"
+                                alt=""
+                              />
+                              Techie Coder
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="#">Finance</a>
+                          </li>
+                          <li class="list-inline-item">26 May 2021</li>
+                        </ul>
+                        <h5 class="post-tile">
+                          <a href="#">
+                            Sensex closes 380pts higher, Nifty at 15,302; metal,
+                            power drag
+                          </a>
+                        </h5>
+                        <p class="excerpt mb-0">
+                          This is Lorem ipsum dolor sit amet consectetur
+                          adipisicing elit. Modi, iure.
+                        </p>
+                        <div
+                          class="post-bottom clearfix d-flex align-items-center"
+                        >
+                          <div class="social-share me-auto">
+                            <button class="toggle-button icon-share"></button>
+                            <ul class="icons list-unstyled list-inline mb-0">
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-facebook-f"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-linkedin-in"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"
+                                  ><i class="fab fa-telegram-plane"></i
+                                ></a>
+                              </li>
+                              <li class="list-inline-item">
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="more-button float-end">
+                            <a href="#"><span class="icon-options"></span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <div class="text-center">
+                    <button class="btn btn-simple">Load More</button>
+                  </div>
+                </div>
+              </div>
+              <!-- left part over here  -->
+            </div>
+            <!-- right part starts from here  -->
+
+            <div class="col-lg-4">
+              <div class="sidebar">
+                <div class="widget rounded">
+                  <div class="widget-about text-center">
+                    <img
+                      src="assets/Group 3.png"
+                      alt="DiaX.ai"
+                      style="height: 70px; width: 200px"
+                      alt=""
+                      class="logo"
+                    />
+                    <p class="mb-4" style="text-align: justify">
+                      Experience revolutionary healthcare with Diax.AI.
+                      Combining cutting-edge technology and personalized care,
+                      we offer guidance, support, and streamlined processes.
+                      Join us in saving time, resources, and money while
+                      achieving better health and wellness.
+                    </p>
+                    <ul class="social-icons list-unstyled list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#"><i class="far fa-envelope"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="widget rounded">
+                  <div class="widget-header text-center">
+                    <h3 class="widget-title">Popular Posts</h3>
+                  </div>
+                  <div class="widget-content">
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <span class="number">1</span>
+                        <a href="emr-blog.html">
+                          <div class="inner">
+                            <img
+                              src="assets/emr-blogs.jpg"
+                              style="height: 50px"
+                              alt="emr-blog.html"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="emr-blog.html">How EMR helps society?</a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">30 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <span class="number">2</span>
+                        <a href="Empowering-the-Next-Generation.html">
+                          <div class="inner">
+                            <img
+                              src="images/posts/tabs-2.jpg"
+                              alt="Empowering-the-Next-Generation.html"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="Empowering-the-Next-Generation.html"
+                            >Empowering the Next Generation Fostering a Culture
+                            of Health Literacy
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">30 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <span class="number">3</span>
+                        <a href="Power-of-Data-Visualization.html">
+                          <div class="inner">
+                            <img
+                              src="blog-images/Unraveling the Power of Data Visualization in Diabetes-blog.jpg"
+                              alt="Power-of-Data-Visualization.html"
+                              style="height: 50px"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="Power-of-Data-Visualization.html"
+                            >Unraveling the Power of Data Visualization in
+                            Diabetes Care</a
+                          >
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">30 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="post post-list-sm circle">
+                      <div class="thumb circle">
+                        <span class="number">4</span>
+                        <a href="optimal-data-blog.html">
+                          <div class="inner">
+                            <img
+                              src="assets/optimal-data-blog.webp"
+                              style="height: 50px"
+                              alt="optimal-data-blog.html"
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="details clearfix">
+                        <h6 class="post-title my-0">
+                          <a href="optimal-data-blog.html"
+                            >Unlocking the Power of Optimal Data Saving Lives
+                            Through Technology
+                          </a>
+                        </h6>
+                        <ul class="meta list-inline mt-1 mb-0">
+                          <li class="list-inline-item">30 May 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="widget rounded">
+                  <div class="widget-header text-center">
+                    <h3 class="widget-title">Explore Topics</h3>
+                  </div>
+                  <div class="widget-content">
+                    <ul class="list">
+                      <li><a href="#">Healthcare</a><span>(10)</span></li>
+                      <li><a href="#">Technology</a><span>(8)</span></li>
+                      <li><a href="#">AI</a><span>(6)</span></li>
+                      <li><a href="#">Digital Health</a><span>(7)</span></li>
+                      <li><a href="#">Health Data</a><span>(9)</span></li>
+                      <li><a href="#">Informed Care</a><span>(3)</span></li>
+                      <li><a href="#">Patient Care</a><span>(4)</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="widget rounded">
+                  <div class="widget-header text-center">
+                    <h3 class="widget-title">Newsletter</h3>
+                  </div>
+                  <div class="widget-content">
+                    <span class="newsletter-headline text-center mb-3"
+                      >Join 50,000 subscribers</span
+                    >
+                    <form action="#">
+                      <div class="mb-2">
+                        <input
+                          type="email"
+                          class="form-control w-100 text-center"
+                          placeholder="Email address..."
+                        />
+                      </div>
+                      <button class="btn btn-default btn-full">Sign Up</button>
+                    </form>
+                    <span class="newsletter-privacy text-center mt-3">
+                      By signing up, you agree to our
+                      <a href="#">Privacy policy</a>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="widget rounded">
+                  <div class="widget-header text-center">
+                    <h3 class="widget-title">More Blogs</h3>
+                  </div>
+                  <div class="widget-content">
+                    <div class="post-carousel-widget">
+                      <div class="post post-carousel">
+                        <div class="thumb rounded">
+                          <a href="#" class="category-badge position-absolute"
+                            >More Blogs</a
+                          >
+                          <a href="connecting-medicine-blog.html">
+                            <div class="inner">
+                              <img
+                                src="blog-images/Connecting-Medicine-blog.webp"
+                                alt=""
+                              />
+                            </div>
+                          </a>
+                        </div>
+                        <h5 class="post-title mb-0 mt-4">
+                          <a href="connecting-medicine-blog.html"
+                            >Connecting Medicine, Mathematics, and Technology</a
+                          >
+                        </h5>
+                        <ul class="meta list-inline mt-2 mb-0">
+                          <li class="list-inline-item">
+                            <a href="#">Dr Sivakumar</a>
+                          </li>
+                          <li class="list-inline-item">29 March 2021</li>
+                        </ul>
+                      </div>
+                      <div class="post post-carousel">
+                        <div class="thumb rounded">
+                          <a href="#" class="category-badge position-absolute"
+                            >More Blogs</a
+                          >
+                          <a href="unlocking-health-data's-hidden-blog.html">
+                            <div class="inner">
+                              <img
+                                src="blog-images/UnlockingHealthDataHiddenPotential-blog.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </a>
+                        </div>
+                        <h5 class="post-title mb-0 mt-4">
+                          <a href="unlocking-health-data's-hidden-blog.html"
+                            >Unlocking Health Data's Hidden Potential with
+                            Diax.ai: A New Era of Informed Care</a
+                          >
+                        </h5>
+                        <ul class="meta list-inline mt-2 mb-0">
+                          <li class="list-inline-item">
+                            <a href="#">Dr Sivakumar</a>
+                          </li>
+                          <li class="list-inline-item">29 March 2021</li>
+                        </ul>
+                      </div>
+                      <div class="post post-carousel">
+                        <div class="thumb rounded">
+                          <a href="#" class="category-badge position-absolute"
+                            >More Blogs</a
+                          >
+                          <a href="advancing-healthcare.html">
+                            <div class="inner">
+                              <img
+                                src="blog-images/advancing-healthcare-blog.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </a>
+                        </div>
+                        <h5 class="post-title mb-0 mt-4">
+                          <a href="advancing-healthcare.html"
+                            >Advancing Healthcare: A Parallel to Autonomous
+                            Driving</a
+                          >
+                        </h5>
+                        <ul class="meta list-inline mt-2 mb-0">
+                          <li class="list-inline-item">
+                            <a href="#">Techie Coder</a>
+                          </li>
+                          <li class="list-inline-item">29 March 2021</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="slick-arrows-bot">
+                      <buttton
+                        class="carousel-botNav-prev slick-custom-buttons"
+                        type="button"
+                        data-role="none"
+                        aria-label="Previous"
+                      >
+                        <i class="icon-arrow-left"></i>
+                      </buttton>
+                      <buttton
+                        class="carousel-botNav-next slick-custom-buttons"
+                        type="button"
+                        data-role="none"
+                        aria-label="Next"
+                      >
+                        <i class="icon-arrow-right"></i>
+                      </buttton>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="widget rounded">
+                  <div class="widget-header text-center">
+                    <h3 class="widget-title">Tag Clouds</h3>
+                  </div>
+                  <div class="widget-content">
+                    <a href="#" class="tag">#Trending</a>
+                    <a href="#" class="tag">#DigitalHealth </a>
+                    <a href="#" class="tag">#ClinicalDecisionSupport </a>
+                    <a href="#" class="tag">#PatientCare </a>
+                    <a href="#" class="tag">#HealthRecords </a>
+                    <a href="#" class="tag">#PersonalizedCare </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="instagram">
+        <div class="container-xl">
+          <a href="#" class="btn btn-default btn-instagram"
+            >Diax.ai posts on LinkedIn</a
+          >
+          <div class="instagram-feed d-flex flex-wrap">
+            <div class="insta-item col-sm-2 col-6 col-md-2">
+              <a href="#">
+                <img src="images/insta/insta-1.jpg" alt="" />
+              </a>
+            </div>
+            <div class="insta-item col-sm-2 col-6 col-md-2">
+              <a href="#">
+                <img src="images/insta/insta-2.jpg" alt="" />
+              </a>
+            </div>
+            <div class="insta-item col-sm-2 col-6 col-md-2">
+              <a href="#">
+                <img src="images/insta/insta-3.jpg" alt="" />
+              </a>
+            </div>
+            <div class="insta-item col-sm-2 col-6 col-md-2">
+              <a href="#">
+                <img src="images/insta/insta-4.jpg" alt="" />
+              </a>
+            </div>
+            <div class="insta-item col-sm-2 col-6 col-md-2">
+              <a href="#">
+                <img src="images/insta/insta-5.jpg" alt="" />
+              </a>
+            </div>
+            <div class="insta-item col-sm-2 col-6 col-md-2">
+              <a href="#">
+                <img src="images/insta/insta-6.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="container-xl">
+          <div class="footer-inner">
+            <div class="row d-flex align-items-center gy-4">
+              <div class="col-md-4">
+                <span class="copyright">&copy; 2024 Diax.ai</span>
+              </div>
+              <div class="col-md-4 text-center">
+                <ul class="social-icons list-unstyled list-inline mb-0">
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <i class="fab fa-pinterest"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <i class="fab fa-itunes"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <a href="#" id="return-to-top" class="float-md-end">
+                  <i class="icon-arrow-up"></i>
+                  Back to Top
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- canvas menu  -->
+    <div class="canvas-menu d-flex align-items-end flex-column">
+      <button class="btn-close" aria-label="Close" type="button"></button>
+
+      <div class="logo">
+        <img src="images/logo.svg" alt="" />
+      </div>
+      <nav>
+        <ul class="vertical-menu">
+          <li class="active">
+            <a href="index.html">Home</a>
+            <ul class="submenu">
+              <li><a href="#">Fashion</a></li>
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">Electronic</a></li>
+              <li><a href="#">Cricket</a></li>
+              <li><a href="#">Technology</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Latest</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-itunes"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- search pop up  -->
+    <div class="search-popup">
+      <button class="btn-close" aria-label="Close" type="button"></button>
+
+      <div class="search-content">
+        <div class="text-center">
+          <h3 class="mb-4 mt-0">Press ESC to close</h3>
+        </div>
+
+        <form action="" class="d-flex search-form">
+          <input
+            type="search"
+            placeholder="Search and press enter ..."
+            aria-label="Search"
+            class="form-control me-2"
+          />
+          <button class="btn btn-default btn-lg" type="submit">
+            <i class="icon-magnifier"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- javascripts  -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.sticky-sidebar.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
