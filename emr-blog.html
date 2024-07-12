@@ -770,6 +770,7 @@
 
         <li class="item"><a href="dialog.html">Dialog</a></li>
         <li class="item"><a href="diabrain.html">DiaBrain</a></li>
+        <li class="item"><a href="blogs-dashboard.html">Blogs</a></li>
         <!-- <li class="item has-submenu">
           <a tabindex="0">Dialog</a>
           <ul class="submenu">
@@ -797,6 +798,62 @@
         </li>
       </ul>
     </nav>
+
+    <script>
+      const toggle = document.querySelector(".toggle");
+      const menu = document.querySelector(".menu");
+      const items = document.querySelectorAll(".item");
+
+      /* Toggle mobile menu */
+      function toggleMenu() {
+        if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+        } else {
+          menu.classList.add("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+        }
+      }
+
+      /* Activate Submenu */
+      function toggleItem() {
+        if (this.classList.contains("submenu-active")) {
+          this.classList.remove("submenu-active");
+        } else if (menu.querySelector(".submenu-active")) {
+          menu
+            .querySelector(".submenu-active")
+            .classList.remove("submenu-active");
+          this.classList.add("submenu-active");
+        } else {
+          this.classList.add("submenu-active");
+        }
+      }
+
+      /* Close Submenu From Anywhere */
+      function closeSubmenu(e) {
+        if (menu.querySelector(".submenu-active")) {
+          let isClickInside = menu
+            .querySelector(".submenu-active")
+            .contains(e.target);
+
+          if (!isClickInside && menu.querySelector(".submenu-active")) {
+            menu
+              .querySelector(".submenu-active")
+              .classList.remove("submenu-active");
+          }
+        }
+      }
+      /* Event Listeners */
+      toggle.addEventListener("click", toggleMenu, false);
+      for (let item of items) {
+        if (item.querySelector(".submenu")) {
+          item.addEventListener("click", toggleItem, false);
+        }
+        item.addEventListener("keypress", toggleItem, false);
+      }
+      document.addEventListener("click", closeSubmenu, false);
+    </script>
+    <script src="assets/js/script.js"></script>
 
     <main>
       <section class="hero-blog">
@@ -900,7 +957,7 @@
           aria-hidden="true"
           class="wp-block-spacer"
         ></div>
-        <h2 id="about-our-app">Real time updates in EMR</h2>
+        <h2 id="about-our-app0">Real time updates in EMR</h2>
 
         <p class="intro-text style1">
           Real-time updates in Electronic Medical Records (EMRs) refer to the
@@ -1218,7 +1275,7 @@
           aria-hidden="true"
           class="wp-block-spacer"
         ></div>
-        <h2 id="about-our-app">Diagnostic support</h2>
+        <h2 id="about-our-app1">Diagnostic support</h2>
 
         <p class="intro-text style1">
           Diagnostic support in Electronic Medical Records (EMR) refers to the
@@ -1309,7 +1366,7 @@
           class="wp-block-spacer"
         ></div> -->
         <div class="about-box">
-          <h2 id="about-our-app">
+          <h2 id="about-our-app2">
             Artificial intelligence and machine learning in EMR
           </h2>
 
@@ -1364,7 +1421,7 @@
           aria-hidden="true"
           class="wp-block-spacer"
         ></div>
-        <h2 id="about-our-app">Follow up and after care in EMR</h2>
+        <h2 id="about-our-app3">Follow up and after care in EMR</h2>
 
         <p class="intro-text style1">
           EMRs allow healthcare providers to schedule follow-up appointments
@@ -1402,7 +1459,7 @@
           patient-centered care.
         </p>
         <div class="about-box">
-          <h2 id="about-our-app">Conclusion</h2>
+          <h2 id="result">Conclusion</h2>
 
           <p class="intro-text style1" style="color: black">
             Electronic Medical Records (EMRs) have revolutionized the healthcare
@@ -1464,21 +1521,20 @@
         </div>
         <div class="nav-button">
           <i class="fas fa-envelope"></i
-          ><a href="#about-our-app"><span>About our App</span></a>
+          ><a href="#about-our-app"><span>What is EMR</span></a>
         </div>
         <hr />
         <div class="nav-button">
           <i class="fas fa-cogs"></i
-          ><a href="#case-study-1"><span>Case Study 1</span></a>
+          ><a href="#case-study-1"><span>Care team collaboration</span></a>
         </div>
         <div class="nav-button">
           <i class="fas fa-blog"></i
-          ><a href="#tabulation"><span>Tabulation</span></a>
+          ><a href="#tabulation"><span>Secure communication</span></a>
         </div>
 
         <div class="nav-button">
-          <i class="fas fa-blog"></i
-          ><a href="#tabulation"><span>Result</span></a>
+          <i class="fas fa-blog"></i><a href="#result"><span>Result</span></a>
         </div>
         <div id="nav-content-highlight"></div>
       </div>

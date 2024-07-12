@@ -764,11 +764,13 @@
           /></a>
         </li>
         <li class="item"><a href="index.html">Home</a></li>
+
         <li class="item"><a href="#about">About</a></li>
         <li class="item"><a href="diary.html">Diary</a></li>
 
         <li class="item"><a href="dialog.html">Dialog</a></li>
         <li class="item"><a href="diabrain.html">DiaBrain</a></li>
+        <li class="item"><a href="blogs-dashboard.html">Blogs</a></li>
         <!-- <li class="item has-submenu">
           <a tabindex="0">Dialog</a>
           <ul class="submenu">
@@ -796,6 +798,62 @@
         </li>
       </ul>
     </nav>
+
+    <script>
+      const toggle = document.querySelector(".toggle");
+      const menu = document.querySelector(".menu");
+      const items = document.querySelectorAll(".item");
+
+      /* Toggle mobile menu */
+      function toggleMenu() {
+        if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+        } else {
+          menu.classList.add("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+        }
+      }
+
+      /* Activate Submenu */
+      function toggleItem() {
+        if (this.classList.contains("submenu-active")) {
+          this.classList.remove("submenu-active");
+        } else if (menu.querySelector(".submenu-active")) {
+          menu
+            .querySelector(".submenu-active")
+            .classList.remove("submenu-active");
+          this.classList.add("submenu-active");
+        } else {
+          this.classList.add("submenu-active");
+        }
+      }
+
+      /* Close Submenu From Anywhere */
+      function closeSubmenu(e) {
+        if (menu.querySelector(".submenu-active")) {
+          let isClickInside = menu
+            .querySelector(".submenu-active")
+            .contains(e.target);
+
+          if (!isClickInside && menu.querySelector(".submenu-active")) {
+            menu
+              .querySelector(".submenu-active")
+              .classList.remove("submenu-active");
+          }
+        }
+      }
+      /* Event Listeners */
+      toggle.addEventListener("click", toggleMenu, false);
+      for (let item of items) {
+        if (item.querySelector(".submenu")) {
+          item.addEventListener("click", toggleItem, false);
+        }
+        item.addEventListener("keypress", toggleItem, false);
+      }
+      document.addEventListener("click", closeSubmenu, false);
+    </script>
+    <script src="assets/js/script.js"></script>
 
     <main>
       <section class="hero-blog">
@@ -898,7 +956,7 @@
           aria-hidden="true"
           class="wp-block-spacer"
         ></div>
-        <h2 id="about-our-app">Diax.ai: Bridging the Data Gap</h2>
+        <h2 id="about-our-app1">Diax.ai: Bridging the Data Gap</h2>
 
         <p class="intro-text style1">
           Enter Diax.ai – the bridge between fragmented data and holistic care.
@@ -1185,7 +1243,7 @@
           aria-hidden="true"
           class="wp-block-spacer"
         ></div>
-        <h2 id="about-our-app">The Future of Healthcare</h2>
+        <h2 id="result">The Future of Healthcare</h2>
 
         <p class="intro-text style1">
           The future of healthcare is no longer a distant dream – it's at your
@@ -1409,21 +1467,21 @@
         </div>
         <div class="nav-button">
           <i class="fas fa-envelope"></i
-          ><a href="#about-our-app"><span>About our App</span></a>
+          ><a href="#about-our-app"><span>Health Records</span></a>
         </div>
         <hr />
         <div class="nav-button">
           <i class="fas fa-cogs"></i
-          ><a href="#case-study-1"><span>Case Study 1</span></a>
+          ><a href="#case-study-1"><span>Power of Diax.ai</span></a>
         </div>
         <div class="nav-button">
           <i class="fas fa-blog"></i
-          ><a href="#tabulation"><span>Tabulation</span></a>
+          ><a href="#tabulation"><span>Transformative Impact</span></a>
         </div>
 
         <div class="nav-button">
           <i class="fas fa-blog"></i
-          ><a href="#tabulation"><span>Result</span></a>
+          ><a href="#result"><span>Future of Healthcare</span></a>
         </div>
         <div id="nav-content-highlight"></div>
       </div>

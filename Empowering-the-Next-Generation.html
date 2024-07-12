@@ -764,11 +764,13 @@
           /></a>
         </li>
         <li class="item"><a href="index.html">Home</a></li>
+
         <li class="item"><a href="#about">About</a></li>
         <li class="item"><a href="diary.html">Diary</a></li>
 
         <li class="item"><a href="dialog.html">Dialog</a></li>
         <li class="item"><a href="diabrain.html">DiaBrain</a></li>
+        <li class="item"><a href="blogs-dashboard.html">Blogs</a></li>
         <!-- <li class="item has-submenu">
           <a tabindex="0">Dialog</a>
           <ul class="submenu">
@@ -796,6 +798,62 @@
         </li>
       </ul>
     </nav>
+
+    <script>
+      const toggle = document.querySelector(".toggle");
+      const menu = document.querySelector(".menu");
+      const items = document.querySelectorAll(".item");
+
+      /* Toggle mobile menu */
+      function toggleMenu() {
+        if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+        } else {
+          menu.classList.add("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+        }
+      }
+
+      /* Activate Submenu */
+      function toggleItem() {
+        if (this.classList.contains("submenu-active")) {
+          this.classList.remove("submenu-active");
+        } else if (menu.querySelector(".submenu-active")) {
+          menu
+            .querySelector(".submenu-active")
+            .classList.remove("submenu-active");
+          this.classList.add("submenu-active");
+        } else {
+          this.classList.add("submenu-active");
+        }
+      }
+
+      /* Close Submenu From Anywhere */
+      function closeSubmenu(e) {
+        if (menu.querySelector(".submenu-active")) {
+          let isClickInside = menu
+            .querySelector(".submenu-active")
+            .contains(e.target);
+
+          if (!isClickInside && menu.querySelector(".submenu-active")) {
+            menu
+              .querySelector(".submenu-active")
+              .classList.remove("submenu-active");
+          }
+        }
+      }
+      /* Event Listeners */
+      toggle.addEventListener("click", toggleMenu, false);
+      for (let item of items) {
+        if (item.querySelector(".submenu")) {
+          item.addEventListener("click", toggleItem, false);
+        }
+        item.addEventListener("keypress", toggleItem, false);
+      }
+      document.addEventListener("click", closeSubmenu, false);
+    </script>
+    <script src="assets/js/script.js"></script>
 
     <main>
       <section class="hero-blog">
@@ -896,7 +954,7 @@
           aria-hidden="true"
           class="wp-block-spacer"
         ></div>
-        <h2 id="about-our-app">Witnessing Progress</h2>
+        <h2 id="about-our-app2">Witnessing Progress</h2>
 
         <p class="intro-text style1">
           Witnessing his progress over three months was genuinely heartening. An
@@ -936,7 +994,7 @@
           aria-hidden="true"
           class="wp-block-spacer"
         ></div>
-        <h2 id="about-our-app">The Role of Technology</h2>
+        <h2 id="about-our-app3">The Role of Technology</h2>
 
         <p class="intro-text style1">
           When coupled with cutting-edge technology for data visualization,
@@ -962,7 +1020,7 @@
           alt="About Our App"
           class="chart-image"
         />
-        <h2 id="about-our-app">
+        <h2 id="about-our-app4">
           Diary: Bridging the Gap in Continuity of Care
         </h2>
 
@@ -979,7 +1037,7 @@
           class="wp-block-spacer"
         ></div>
         <div class="about-box">
-          <h2 id="case-study-1">Diabrain: Elevating Healthcare</h2>
+          <h2 id="case-study-2">Diabrain: Elevating Healthcare</h2>
 
           <p class="intro-text style1" style="color: black">
             In the future, Diabrain will further elevate healthcare towards
@@ -1002,7 +1060,7 @@
           class="wp-block-spacer"
         ></div>
         <div class="about-box">
-          <h2 id="case-study-1">Conclusion</h2>
+          <h2 id="case-study-3">Conclusion</h2>
 
           <p class="intro-text style1" style="color: black">
             Empowering the next generation with health literacy is essential for
@@ -1037,20 +1095,21 @@
         </div>
         <div class="nav-button">
           <i class="fas fa-envelope"></i
-          ><a href="#about-our-app"><span>About our App </span></a>
+          ><a href="#about-our-app"><span>The Power of Knowledge</span></a>
         </div>
         <hr />
         <div class="nav-button">
           <i class="fas fa-cogs"></i
-          ><a href="#case-study-1"><span>Case Study 1</span></a>
+          ><a href="#case-study-1"><span>Personalized Care</span></a>
         </div>
         <div class="nav-button">
           <i class="fas fa-blog"></i
-          ><a href="#tabulation"><span>Tabulation</span></a>
+          ><a href="#Diabrain"><span>Tabulation</span></a>
         </div>
 
         <div class="nav-button">
-          <i class="fas fa-blog"></i><span>Result</span>
+          <i class="fas fa-blog"></i
+          ><a href="#case-study-3"><span>Result</span></a>
         </div>
         <div id="nav-content-highlight"></div>
       </div>
